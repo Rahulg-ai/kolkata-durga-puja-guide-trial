@@ -10,7 +10,11 @@ from fastapi import (
     FastAPI,
     Request,
 )
-from fastapi.middleware.cors import CORSMiddleware
+
+from fastapi.middleware.cors import (
+    CORSMiddleware,
+)
+
 from fastapi.middleware.trustedhost import (
     TrustedHostMiddleware,
 )
@@ -34,37 +38,37 @@ from slowapi.util import (
 )
 
 
-# ==================================================
+# =========================================================
 # DATABASE
-# ==================================================
+# =========================================================
 
 from backend.database import (
     init_database,
 )
 
 
-# ==================================================
-# DONATION / RAZORPAY FUNCTIONS
-# ==================================================
+# =========================================================
+# DONATION / RAZORPAY
+# =========================================================
 
 from backend.donations import (
     ADMIN_TOKEN,
     RAZORPAY_WEBHOOK_SECRET,
     check_name,
     create_donation_order,
+    ensure_supporter_visibility_column,
     get_admin_supporters,
     get_leaderboard,
     get_razorpay_client,
     process_razorpay_webhook,
     set_supporter_visibility,
-    ensure_supporter_visibility_column,
     verify_donation,
 )
 
 
-# ==================================================
+# =========================================================
 # ROUTING
-# ==================================================
+# =========================================================
 
 from scripts.routing.return_router import (
     build_return_route,
@@ -75,9 +79,9 @@ from scripts.routing.route_planner import (
 )
 
 
-# ==================================================
+# =========================================================
 # PROJECT PATHS
-# ==================================================
+# =========================================================
 
 BASE_DIR = (
     Path(__file__)
@@ -91,9 +95,9 @@ load_dotenv(
 )
 
 
-# ==================================================
-# APP
-# ==================================================
+# =========================================================
+# FASTAPI APP
+# =========================================================
 
 app = FastAPI(
     title="Durga Puja Metro Guide",
@@ -102,18 +106,18 @@ app = FastAPI(
 )
 
 
-# ==================================================
+# =========================================================
 # DATABASE INITIALIZATION
-# ==================================================
+# =========================================================
 
 init_database()
 
 ensure_supporter_visibility_column()
 
 
-# ==================================================
+# =========================================================
 # RATE LIMITING
-# ==================================================
+# =========================================================
 
 limiter = Limiter(
     key_func=get_remote_address
@@ -127,13 +131,14 @@ app.add_exception_handler(
 )
 
 
-# ==================================================
-# HOST SECURITY
-# ==================================================
+# =========================================================
+# TRUSTED HOSTS
+# =========================================================
 
 allowed_hosts = [
     "localhost",
     "127.0.0.1",
+    "*.vercel.app",
 ]
 
 
@@ -155,9 +160,9 @@ app.add_middleware(
 )
 
 
-# ==================================================
+# =========================================================
 # CORS
-# ==================================================
+# =========================================================
 
 frontend_origin = os.getenv(
     "FRONTEND_ORIGIN",
@@ -165,20 +170,32 @@ frontend_origin = os.getenv(
 )
 
 
+cors_origins = [
+    frontend_origin,
+
+    "http://localhost:5173",
+
+    "http://127.0.0.1:5173",
+
+    "http://localhost:5174",
+
+    "http://127.0.0.1:5174",
+]
+
+
+# Remove duplicates while preserving order.
+
+cors_origins = list(
+    dict.fromkeys(
+        cors_origins
+    )
+)
+
+
 app.add_middleware(
     CORSMiddleware,
 
-    allow_origins=[
-        frontend_origin,
-
-        "http://localhost:5173",
-
-        "http://127.0.0.1:5173",
-
-        "http://localhost:5174",
-
-        "http://127.0.0.1:5174",
-    ],
+    allow_origins=cors_origins,
 
     allow_credentials=False,
 
@@ -196,9 +213,9 @@ app.add_middleware(
 )
 
 
-# ==================================================
+# =========================================================
 # SECURITY HEADERS
-# ==================================================
+# =========================================================
 
 @app.middleware("http")
 async def add_security_headers(
@@ -240,9 +257,9 @@ async def add_security_headers(
     return response
 
 
-# ==================================================
+# =========================================================
 # DATA FILES
-# ==================================================
+# =========================================================
 
 PANDAL_FILE = (
     BASE_DIR
@@ -270,9 +287,9 @@ metro = pd.read_csv(
 )
 
 
-# ==================================================
+# =========================================================
 # REQUEST MODELS
-# ==================================================
+# =========================================================
 
 class RouteRequest(
     BaseModel
@@ -339,9 +356,9 @@ class DonationVerificationRequest(
     )
 
 
-# ==================================================
+# =========================================================
 # ADMIN AUTHENTICATION
-# ==================================================
+# =========================================================
 
 def require_admin_token(
     request: Request,
@@ -379,9 +396,9 @@ def require_admin_token(
         )
 
 
-# ==================================================
+# =========================================================
 # HOME
-# ==================================================
+# =========================================================
 
 @app.get("/")
 def home():
@@ -392,11 +409,12 @@ def home():
     }
 
 
-# ==================================================
+# =========================================================
 # METRO STATIONS
-# ==================================================
+# =========================================================
 
 @app.get("/stations")
+@app.get("/api/stations")
 def get_stations():
 
     lines = {}
@@ -424,11 +442,12 @@ def get_stations():
     }
 
 
-# ==================================================
+# =========================================================
 # PANDALS
-# ==================================================
+# =========================================================
 
 @app.get("/pandals")
+@app.get("/api/pandals")
 def get_pandals():
 
     return pandals.to_dict(
@@ -436,11 +455,12 @@ def get_pandals():
     )
 
 
-# ==================================================
+# =========================================================
 # MAIN ROUTE
-# ==================================================
+# =========================================================
 
 @app.post("/route")
+@app.post("/api/route")
 @limiter.limit("20/minute")
 def create_route(
     request: Request,
@@ -462,11 +482,12 @@ def create_route(
     }
 
 
-# ==================================================
+# =========================================================
 # RETURN ROUTE
-# ==================================================
+# =========================================================
 
 @app.post("/return-route")
+@app.post("/api/return-route")
 @limiter.limit("20/minute")
 def create_return_route(
     request: Request,
@@ -499,11 +520,16 @@ def create_return_route(
     }
 
 
-# ==================================================
+# =========================================================
 # CHECK SUPPORTER NAME
-# ==================================================
+# =========================================================
 
-@app.get("/supporters/check-name")
+@app.get(
+    "/supporters/check-name"
+)
+@app.get(
+    "/api/supporters/check-name"
+)
 @limiter.limit("30/minute")
 def check_supporter_name(
     request: Request,
@@ -535,11 +561,16 @@ def check_supporter_name(
     }
 
 
-# ==================================================
+# =========================================================
 # CREATE RAZORPAY ORDER
-# ==================================================
+# =========================================================
 
-@app.post("/donations/create-order")
+@app.post(
+    "/donations/create-order"
+)
+@app.post(
+    "/api/donations/create-order"
+)
 @limiter.limit("5/minute")
 def create_donation(
     request: Request,
@@ -591,11 +622,16 @@ def create_donation(
         }
 
 
-# ==================================================
+# =========================================================
 # PAYMENT VERIFICATION
-# ==================================================
+# =========================================================
 
-@app.post("/donations/verify")
+@app.post(
+    "/donations/verify"
+)
+@app.post(
+    "/api/donations/verify"
+)
 @limiter.limit("10/minute")
 def verify_donation_payment(
     request: Request,
@@ -643,11 +679,16 @@ def verify_donation_payment(
         }
 
 
-# ==================================================
+# =========================================================
 # RAZORPAY WEBHOOK
-# ==================================================
+# =========================================================
 
-@app.post("/webhooks/razorpay")
+@app.post(
+    "/webhooks/razorpay"
+)
+@app.post(
+    "/api/webhooks/razorpay"
+)
 async def razorpay_webhook(
     request: Request,
 ):
@@ -698,9 +739,9 @@ async def razorpay_webhook(
         }
 
 
-    # --------------------------------------------------
+    # -----------------------------------------------------
     # VERIFY RAZORPAY WEBHOOK SIGNATURE
-    # --------------------------------------------------
+    # -----------------------------------------------------
 
     try:
 
@@ -735,9 +776,9 @@ async def razorpay_webhook(
         }
 
 
-    # --------------------------------------------------
+    # -----------------------------------------------------
     # PARSE EVENT
-    # --------------------------------------------------
+    # -----------------------------------------------------
 
     try:
 
@@ -787,11 +828,12 @@ async def razorpay_webhook(
         }
 
 
-# ==================================================
+# =========================================================
 # PUBLIC SUPPORTER LEADERBOARD
-# ==================================================
+# =========================================================
 
 @app.get("/supporters")
+@app.get("/api/supporters")
 @limiter.limit("60/minute")
 def supporters(
     request: Request,
@@ -803,11 +845,16 @@ def supporters(
     }
 
 
-# ==================================================
+# =========================================================
 # ADMIN - GET ALL SUPPORTERS
-# ==================================================
+# =========================================================
 
-@app.get("/admin/supporters")
+@app.get(
+    "/admin/supporters"
+)
+@app.get(
+    "/api/admin/supporters"
+)
 @limiter.limit("30/minute")
 def admin_supporters(
     request: Request,
@@ -857,12 +904,15 @@ def admin_supporters(
         }
 
 
-# ==================================================
+# =========================================================
 # ADMIN - HIDE / SHOW SUPPORTER
-# ==================================================
+# =========================================================
 
 @app.patch(
     "/admin/supporters/{supporter_id}/visibility"
+)
+@app.patch(
+    "/api/admin/supporters/{supporter_id}/visibility"
 )
 @limiter.limit("30/minute")
 def admin_set_supporter_visibility(
