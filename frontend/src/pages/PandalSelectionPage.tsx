@@ -1,3 +1,4 @@
+import API_BASE_URL from "../api";
 import {
   useEffect,
   useMemo,
@@ -64,7 +65,7 @@ function PandalSelectionPage({
 
         const response =
           await fetch(
-            "http://localhost:8000/pandals"
+            `${API_BASE_URL}/pandals`
           );
 
 

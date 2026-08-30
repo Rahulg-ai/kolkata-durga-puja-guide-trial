@@ -1,3 +1,4 @@
+import API_BASE_URL from "../api";
 import { useEffect, useState } from "react";
 
 import "./StartPage.css";
@@ -24,7 +25,7 @@ function StartPage({
     async function loadStations() {
       try {
         const response = await fetch(
-          "http://localhost:8000/stations"
+          `${API_BASE_URL}/stations`
         );
 
         if (!response.ok) {
