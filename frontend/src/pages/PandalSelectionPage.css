@@ -1,0 +1,721 @@
+/* =====================================================================
+   PANDAL SELECTION PAGE
+   ===================================================================== */
+
+.pandal-selection-screen {
+  justify-content: flex-start;
+}
+
+
+/* ---------------------------------------------------------------------
+   SELECTION SUMMARY
+   --------------------------------------------------------------------- */
+
+.selection-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.selection-summary > div {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.selection-summary strong {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-sindoor);
+}
+
+.selection-summary > div span {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.clear-selection-button {
+  border: none;
+  background: transparent;
+  color: var(--color-maroon);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.clear-selection-button:hover {
+  color: var(--color-sindoor);
+}
+
+
+/* ---------------------------------------------------------------------
+   SEARCH
+   --------------------------------------------------------------------- */
+
+.pandal-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 18px;
+  margin-bottom: 22px;
+  border-radius: var(--radius-pill);
+  background: var(--color-paper);
+  border: 1.5px solid rgba(199, 154, 61, 0.4);
+  box-shadow: var(--shadow-xs);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pandal-search:focus-within {
+  border-color: var(--color-gold);
+  box-shadow:
+    var(--shadow-sm),
+    0 0 0 3px rgba(199, 154, 61, 0.18);
+}
+
+.pandal-search span {
+  flex-shrink: 0;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.pandal-search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-ink);
+}
+
+.pandal-search input::placeholder {
+  color: var(--color-ink-soft);
+  opacity: 0.6;
+}
+
+
+/* ---------------------------------------------------------------------
+   LOADING
+   --------------------------------------------------------------------- */
+
+.pandal-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 50px 0;
+}
+
+.pandal-loading .loading-spinner {
+  margin: 0 auto;
+}
+
+.pandal-loading p {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-ink-soft);
+}
+
+
+/* ---------------------------------------------------------------------
+   EMPTY
+   --------------------------------------------------------------------- */
+
+.pandal-empty {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.pandal-empty > div {
+  margin-bottom: 12px;
+  font-size: 2.2rem;
+  opacity: 0.6;
+}
+
+.pandal-empty h2 {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.pandal-empty p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--color-ink-soft);
+}
+
+
+/* =====================================================================
+   PANDAL GRID
+   ===================================================================== */
+
+.pandal-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fill, minmax(220px, 1fr));
+
+  gap: 14px;
+
+  max-height: 480px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  box-sizing: border-box;
+
+  padding:
+    4px 6px 18px 2px;
+
+  margin-bottom: 22px;
+}
+
+
+/* =====================================================================
+   PANDAL CARD
+   ===================================================================== */
+
+.pandal-selection-screen
+  .pandal-grid
+  .pandal-card {
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: stretch;
+
+  justify-content: flex-start;
+
+  width: 100%;
+
+  min-height: 205px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  padding: 16px;
+
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle at 88% 14%,
+      rgba(199, 154, 61, 0.15),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 252, 245, 0.98),
+      rgba(248, 235, 211, 0.96)
+    );
+
+  border: 1.5px solid
+    rgba(199, 154, 61, 0.35);
+
+  box-shadow:
+    0 5px 16px
+      rgba(80, 35, 20, 0.06);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+
+/* Decorative circle */
+
+.pandal-selection-screen
+  .pandal-grid
+  .pandal-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  right: -32px;
+  bottom: -32px;
+
+  width: 92px;
+  height: 92px;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(199, 154, 61, 0.2);
+
+  pointer-events: none;
+}
+
+
+/* Decorative corner accent */
+
+.pandal-selection-screen
+  .pandal-grid
+  .pandal-card::after {
+
+  content: "✦";
+
+  position: absolute;
+
+  right: 13px;
+  bottom: 9px;
+
+  font-family:
+    var(--font-display);
+
+  font-size: 0.65rem;
+
+  color:
+    var(--color-gold);
+
+  opacity: 0.45;
+
+  pointer-events: none;
+}
+
+
+/* Hover */
+
+.pandal-selection-screen
+  .pandal-grid
+  .pandal-card:hover {
+
+  transform:
+    translateY(-4px)
+    rotate(-0.4deg);
+
+  box-shadow:
+    0 12px 28px
+      rgba(80, 35, 20, 0.1);
+
+  border-color:
+    var(--color-gold);
+}
+
+
+/* Selected */
+
+.pandal-selection-screen
+  .pandal-grid
+  .pandal-card.selected {
+
+  background:
+    radial-gradient(
+      circle at 88% 14%,
+      rgba(199, 154, 61, 0.18),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(163, 30, 34, 0.08),
+      rgba(199, 154, 61, 0.14)
+    );
+
+  border-color:
+    var(--color-sindoor);
+
+  box-shadow:
+    0 8px 24px
+      rgba(125, 43, 32, 0.1),
+    0 0 0 3px
+      rgba(163, 30, 34, 0.07);
+}
+
+
+/* =====================================================================
+   CARD TOP
+   ===================================================================== */
+
+.pandal-selection-screen
+  .pandal-grid
+  .pandal-card-top {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  flex-shrink: 0;
+
+  margin-bottom: 11px;
+}
+
+
+/* ---------------------------------------------------------------------
+   CHECK
+   --------------------------------------------------------------------- */
+
+.pandal-selection-screen
+  .pandal-grid
+  .pandal-check {
+
+  position: static;
+
+  width: 31px;
+  height: 31px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  box-sizing: border-box;
+
+  border-radius: 50%;
+
+  border: 2px solid
+    rgba(125, 43, 32, 0.28);
+
+  background:
+    rgba(255, 252, 244, 0.9);
+
+  color: white;
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.pandal-selection-screen
+  .pandal-grid
+  .pandal-card.selected
+  .pandal-check {
+
+  background:
+    var(--color-sindoor);
+
+  border-color:
+    var(--color-sindoor);
+
+  transform:
+    scale(1.06);
+}
+
+
+/* ---------------------------------------------------------------------
+   FLOWER ICON
+   --------------------------------------------------------------------- */
+
+.pandal-selection-screen
+  .pandal-grid
+  .pandal-number {
+
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  font-size: 1.15rem;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      var(--color-gold-light),
+      var(--color-gold)
+    );
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.5);
+
+  box-shadow:
+    var(--emboss-gold);
+}
+
+
+/* =====================================================================
+   DIVIDER
+   ===================================================================== */
+
+.pandal-selection-screen
+  .pandal-grid
+  .pandal-card-divider {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 100%;
+
+  margin:
+    0 0 10px;
+
+  font-family:
+    var(--font-display);
+
+  font-size: 0.75rem;
+
+  line-height: 1;
+
+  color:
+    var(--color-gold);
+
+  letter-spacing: 0.18em;
+
+  opacity: 0.9;
+}
+
+
+/* =====================================================================
+   PANDAL NAME
+   ===================================================================== */
+
+.pandal-selection-screen
+  .pandal-grid
+  .pandal-card
+  h2 {
+
+  position: static;
+
+  z-index: 1;
+
+  flex-shrink: 0;
+
+  margin: 0;
+
+  font-family:
+    var(--font-display);
+
+  font-size: 1.08rem;
+
+  line-height: 1.28;
+
+  color:
+    var(--color-ink);
+}
+
+
+/* =====================================================================
+   AREA / PLACE
+   ===================================================================== */
+
+.pandal-selection-screen
+  .pandal-grid
+  .pandal-area {
+
+  position: static;
+
+  z-index: 1;
+
+  flex-shrink: 0;
+
+  margin: 8px 0 0;
+
+  font-family:
+    var(--font-body);
+
+  font-size: 0.76rem;
+
+  line-height: 1.35;
+
+  color:
+    var(--color-ink-soft);
+}
+
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+
+.pandal-selection-screen
+  .pandal-card-footer {
+
+  display: flex;
+
+  align-items: center;
+
+  margin-top: auto;
+
+  padding-top: 14px;
+}
+
+
+.pandal-selection-screen
+  .pandal-card-footer span {
+
+  font-family:
+    var(--font-body);
+
+  font-size: 0.53rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+  color:
+    var(--color-maroon);
+
+  opacity: 0.52;
+}
+
+
+/* =====================================================================
+   GENERATE ROUTE
+   ===================================================================== */
+
+.route-generate-button {
+  width: 100%;
+}
+
+
+/* =====================================================================
+   MOBILE
+   ===================================================================== */
+
+@media (max-width: 600px) {
+
+  .selection-summary {
+    margin-bottom: 14px;
+  }
+
+
+  .pandal-search {
+    margin-bottom: 17px;
+    padding: 12px 15px;
+  }
+
+
+  .pandal-grid {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    max-height: 50vh;
+
+    padding:
+      3px 4px
+      calc(90px + env(safe-area-inset-bottom))
+      2px;
+
+    margin-bottom: 10px;
+  }
+
+
+  .pandal-selection-screen
+    .pandal-grid
+    .pandal-card {
+
+    min-height: 185px;
+
+    padding: 13px;
+
+    border-radius: 18px;
+  }
+
+
+  .pandal-selection-screen
+    .pandal-grid
+    .pandal-card-top {
+
+    margin-bottom: 8px;
+  }
+
+
+  .pandal-selection-screen
+    .pandal-grid
+    .pandal-check {
+
+    width: 29px;
+    height: 29px;
+  }
+
+
+  .pandal-selection-screen
+    .pandal-grid
+    .pandal-number {
+
+    width: 38px;
+    height: 38px;
+
+    font-size: 1rem;
+  }
+
+
+  .pandal-selection-screen
+    .pandal-card-divider {
+
+    margin-bottom: 8px;
+
+    font-size: 0.62rem;
+  }
+
+
+  .pandal-selection-screen
+    .pandal-grid
+    .pandal-card
+    h2 {
+
+    font-size: 0.9rem;
+
+    line-height: 1.3;
+  }
+
+
+  .pandal-selection-screen
+    .pandal-grid
+    .pandal-area {
+
+    margin-top: 6px;
+
+    font-size: 0.67rem;
+  }
+
+
+  .pandal-selection-screen
+    .pandal-card-footer {
+
+    padding-top: 10px;
+  }
+
+
+  .pandal-selection-screen
+    .pandal-card-footer span {
+
+    font-size: 0.48rem;
+  }
+
+}

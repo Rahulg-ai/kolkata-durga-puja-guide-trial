@@ -1,0 +1,249 @@
+/* =========================================================
+   STANDALONE PANDAL CARD
+
+   IMPORTANT:
+   This component intentionally uses
+   "compact-pandal-card" instead of
+   "pandal-card" so it cannot conflict
+   with the selection-page card.
+   ========================================================= */
+
+.compact-pandal-card {
+
+  display: grid;
+
+  grid-template-columns:
+    52px 1fr 34px;
+
+  align-items: center;
+
+  gap: 14px;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  text-align: left;
+
+  padding: 14px 16px;
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--color-paper);
+
+  border:
+    1.5px solid
+    rgba(199, 154, 61, 0.3);
+
+  cursor: pointer;
+
+  box-shadow:
+    var(--shadow-xs);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.compact-pandal-card:hover {
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    var(--shadow-md);
+
+  border-color:
+    var(--color-gold);
+}
+
+
+.compact-pandal-card.selected {
+
+  background:
+    linear-gradient(
+      160deg,
+      rgba(163, 30, 34, 0.06),
+      rgba(199, 154, 61, 0.1)
+    );
+
+  border-color:
+    var(--color-sindoor);
+
+  box-shadow:
+    var(--shadow-sm),
+    0 0 0 3px
+      rgba(163, 30, 34, 0.08);
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.compact-pandal-icon {
+
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 16px;
+
+  font-size: 1.4rem;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      var(--color-gold-light),
+      var(--color-gold)
+    );
+
+  box-shadow:
+    var(--emboss-gold);
+}
+
+
+/* =========================================================
+   INFORMATION
+   ========================================================= */
+
+.compact-pandal-info {
+  min-width: 0;
+}
+
+
+.compact-pandal-info h2 {
+
+  margin:
+    0 0 4px;
+
+  font-size:
+    1rem;
+
+  line-height:
+    1.25;
+}
+
+
+.compact-pandal-info p {
+
+  margin:
+    3px 0;
+
+  font-family:
+    var(--font-body);
+
+  font-size:
+    0.78rem;
+
+  line-height:
+    1.35;
+
+  color:
+    var(--color-ink-soft);
+}
+
+
+/* =========================================================
+   CHECK
+   ========================================================= */
+
+.compact-pandal-check {
+
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  border:
+    2px solid
+    rgba(125, 43, 32, 0.3);
+
+  font-weight:
+    800;
+
+  color:
+    var(--color-shola);
+
+  font-size:
+    0.8rem;
+}
+
+
+.compact-pandal-card.selected
+  .compact-pandal-check {
+
+  background:
+    var(--color-sindoor);
+
+  border-color:
+    var(--color-sindoor);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .compact-pandal-card {
+
+    grid-template-columns:
+      44px 1fr 28px;
+
+    gap: 10px;
+
+    padding: 12px;
+  }
+
+
+  .compact-pandal-icon {
+
+    width: 44px;
+    height: 44px;
+
+    border-radius:
+      14px;
+
+    font-size:
+      1.2rem;
+  }
+
+
+  .compact-pandal-info h2 {
+
+    font-size:
+      0.9rem;
+  }
+
+
+  .compact-pandal-info p {
+
+    font-size:
+      0.7rem;
+  }
+
+
+  .compact-pandal-check {
+
+    width: 26px;
+    height: 26px;
+
+    font-size:
+      0.7rem;
+  }
+
+}

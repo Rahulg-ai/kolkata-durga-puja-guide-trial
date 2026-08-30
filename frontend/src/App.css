@@ -1,0 +1,351 @@
+/* =====================================================================
+   APP.CSS
+   Shared primitives reused across every screen: the carved "panel"
+   card, the festival tag pill, screen headings, and the button family.
+   Page-specific layout lives in each page's own stylesheet.
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   PANEL — shared by .hero and .screen-card
+   A raised, gold-trimmed panel with a second "card" glimpsed behind it,
+   like a stack of Puja invitation cards.
+   --------------------------------------------------------------------- */
+
+.hero,
+.screen-card {
+  --panel-radius: var(--radius-lg);
+  width: min(900px, 100%);
+  border-radius: var(--panel-radius);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  z-index: 1;
+
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.9), transparent 42%),
+    radial-gradient(circle at 100% 100%, rgba(199, 154, 61, 0.14), transparent 55%),
+    var(--color-paper);
+
+  border: 1px solid rgba(199, 154, 61, 0.45);
+  box-shadow: var(--shadow-xl);
+  animation: fade-rise 0.5s ease both;
+}
+
+/* the "next card in the stack", peeking out behind */
+.hero::before,
+.screen-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: var(--panel-radius);
+  background: var(--color-maroon);
+  opacity: 0.9;
+  transform: translate(10px, 14px) rotate(-1.6deg);
+}
+
+/* corner medallions, like carved temple roundels */
+.hero::after,
+.screen-card::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  top: -78px;
+  right: -78px;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      rgba(199, 154, 61, 0.16) 0deg 6deg,
+      transparent 6deg 18deg
+    );
+  border: 2px solid rgba(199, 154, 61, 0.22);
+}
+
+.hero {
+  min-height: 680px;
+  padding: 76px 32px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.screen-card {
+  min-height: 680px;
+  padding: 52px 28px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* content sits above the corner medallions / stacked card */
+.hero > *,
+.screen-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .hero,
+  .screen-card {
+    min-height: calc(100dvh - 20px);
+    border-radius: 26px;
+  }
+
+  .hero {
+    padding: 50px 20px 36px;
+  }
+
+  .screen-card {
+    padding: 38px 18px 30px;
+  }
+
+  .hero::before,
+  .screen-card::before {
+    transform: translate(6px, 8px) rotate(-1deg);
+  }
+}
+
+/* ---------------------------------------------------------------------
+   FESTIVAL TAG — small gold-edged pill eyebrow
+   --------------------------------------------------------------------- */
+
+.festival-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-maroon);
+  padding: 7px 18px;
+  margin-bottom: 22px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(180deg, var(--color-shola), var(--color-shola-dim));
+  border: 1px solid rgba(199, 154, 61, 0.55);
+  box-shadow: var(--shadow-xs), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* ---------------------------------------------------------------------
+   HEADINGS
+   --------------------------------------------------------------------- */
+
+.hero h1,
+.screen-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 8vw, 4.6rem);
+  line-height: 1.02;
+  color: var(--color-maroon-dark);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 0 3px 14px rgba(125, 43, 32, 0.12);
+}
+
+.screen-title span {
+  display: block;
+  color: var(--color-sindoor);
+}
+
+.subtitle,
+.screen-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-ink-soft);
+  max-width: 600px;
+}
+
+.subtitle {
+  margin: 30px 0;
+}
+
+.screen-subtitle {
+  margin: 20px 0 30px;
+}
+
+@media (max-width: 600px) {
+  .subtitle,
+  .screen-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   BUTTONS
+   --------------------------------------------------------------------- */
+
+.start-button {
+  --btn-shine-pos: -150%;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 16px 34px;
+  background: linear-gradient(135deg, var(--color-sindoor), var(--color-maroon) 70%);
+  color: var(--color-shola);
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: var(--shadow-md), var(--emboss-maroon);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.start-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    rgba(255, 219, 156, 0.55) 50%,
+    transparent 60%
+  );
+  transform: translateX(var(--btn-shine-pos));
+  transition: transform 0.7s ease;
+}
+
+.start-button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg), var(--emboss-maroon);
+}
+
+.start-button:hover::before {
+  --btn-shine-pos: 150%;
+}
+
+.start-button:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+.start-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.start-button:disabled::before {
+  display: none;
+}
+
+.support-button {
+  border: 1.5px solid var(--color-gold-dark);
+  border-radius: var(--radius-pill);
+  padding: 14px 30px;
+  background: transparent;
+  color: var(--color-maroon-dark);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.support-button:hover {
+  transform: translateY(-3px);
+  background: var(--color-gold-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.back-button {
+  border: none;
+  background: transparent;
+  margin-top: 14px;
+  padding: 6px 2px;
+  color: var(--color-maroon);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.back-button:hover {
+  transform: translateX(-3px);
+  opacity: 0.75;
+}
+
+/* ---------------------------------------------------------------------
+   LOADING STATES
+   --------------------------------------------------------------------- */
+
+.loading-text {
+  font-family: var(--font-body);
+  margin: 30px 0;
+  color: var(--color-ink-soft);
+}
+
+.loading-spinner {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid rgba(199, 154, 61, 0.25);
+  border-top-color: var(--color-sindoor);
+  animation: spin 0.8s linear infinite;
+}
+
+/* ---------------------------------------------------------------------
+   SHARED "LOCATION" INFO CARD
+   Used by the selected-station card (StartPage) and the journey-start
+   card (RoutePage) — a medallion icon + label + description row.
+   --------------------------------------------------------------------- */
+
+.location-icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  font-size: 1.5rem;
+  color: var(--color-shola);
+  background: linear-gradient(155deg, var(--color-marigold), var(--color-sindoor));
+  box-shadow: var(--emboss-maroon), var(--shadow-sm);
+}
+
+.location-label {
+  margin: 0 0 4px;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+}
+
+.location-description {
+  margin: 4px 0 0;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.selected-check {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(155deg, var(--color-gold-light), var(--color-gold));
+  color: var(--color-maroon-dark);
+  font-weight: 800;
+  box-shadow: var(--emboss-gold);
+}
+
+/* ---------------------------------------------------------------------
+   FORM ELEMENTS — shared focus/hover language for text inputs
+   --------------------------------------------------------------------- */
+
+input[type="text"],
+input:not([type]) {
+  font-family: var(--font-body);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}

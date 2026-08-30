@@ -1,0 +1,847 @@
+/* =========================================================
+   DONATION PAGE
+   ========================================================= */
+
+.donation-screen {
+  position: relative;
+}
+
+
+/* =========================================================
+   YOUR PUJO NAME
+   ========================================================= */
+
+.donation-screen .donation-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  color: var(--color-maroon);
+}
+
+.pujo-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding-left: 10px;
+
+  border: 1.5px solid rgba(125, 43, 32, 0.16);
+  border-radius: 18px;
+
+  background: linear-gradient(160deg, rgba(255, 248, 236, 0.98) 0%, rgba(255, 240, 214, 0.9) 100%);
+  box-shadow: 0 2px 10px rgba(125, 43, 32, 0.05);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pujo-name-wrapper:focus-within {
+  border-color: var(--color-gold);
+  box-shadow:
+    0 0 0 4px rgba(199, 154, 61, 0.18),
+    0 6px 16px rgba(125, 43, 32, 0.12);
+  transform: translateY(-1px);
+}
+
+.pujo-name-wrapper > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(145deg, #e6c374, #7d2b20);
+
+  font-size: 0.95rem;
+}
+
+.pujo-name-wrapper input {
+  flex: 1;
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  padding: 13px 14px 13px 0;
+
+  background: transparent;
+
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.name-success,
+.name-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  width: fit-content;
+
+  margin: 8px 0 0;
+  padding: 5px 11px;
+
+  border-radius: 999px;
+
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.name-success {
+  background: rgba(74, 138, 92, 0.12);
+  color: #2f6b45;
+}
+
+.name-error {
+  background: rgba(163, 30, 34, 0.1);
+  color: #a31e22;
+}
+
+
+/* =========================================================
+   PICK YOUR VIBE — AMOUNT GRID
+   ========================================================= */
+
+.donation-screen .amount-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.donation-screen .amount-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+
+  min-width: 66px;
+  padding: 10px 14px;
+
+  border: 1.5px solid rgba(125, 43, 32, 0.14);
+  border-radius: 16px;
+
+  background: linear-gradient(160deg, #fffaf0 0%, #fdecd0 100%);
+
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.donation-screen .amount-button-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+  filter: drop-shadow(0 1px 1px rgba(125, 43, 32, 0.18));
+}
+
+.donation-screen .amount-button-value {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--color-maroon);
+  letter-spacing: 0.01em;
+}
+
+.donation-screen .amount-button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(199, 154, 61, 0.25);
+  border-color: rgba(199, 154, 61, 0.4);
+}
+
+.donation-screen .amount-button.active {
+  border-color: transparent;
+  background: linear-gradient(155deg, #e6c374 0%, #c79a3d 45%, #7d2b20 100%);
+  box-shadow:
+    0 10px 22px rgba(125, 43, 32, 0.32),
+    0 0 0 3px rgba(246, 213, 139, 0.35);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.donation-screen .amount-button.active .amount-button-value {
+  color: #fff8ec;
+}
+
+.donation-screen .amount-button.active .amount-button-icon {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+}
+
+
+/* =========================================================
+   CUSTOM AMOUNT
+   ========================================================= */
+
+.custom-amount-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding-left: 10px;
+
+  border: 1.5px solid rgba(125, 43, 32, 0.16);
+  border-radius: 18px;
+
+  background: linear-gradient(160deg, rgba(255, 248, 236, 0.98) 0%, rgba(255, 240, 214, 0.9) 100%);
+  box-shadow: 0 2px 10px rgba(125, 43, 32, 0.05);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.custom-amount-wrapper:focus-within {
+  border-color: var(--color-gold);
+  box-shadow:
+    0 0 0 4px rgba(199, 154, 61, 0.18),
+    0 6px 16px rgba(125, 43, 32, 0.12);
+  transform: translateY(-1px);
+}
+
+.custom-amount-wrapper > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(145deg, #e6c374, #7d2b20);
+
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #fff8ec;
+}
+
+.custom-amount-wrapper input {
+  flex: 1;
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  padding: 13px 14px 13px 0;
+
+  background: transparent;
+
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.custom-amount-help {
+  margin: 8px 2px 0;
+
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  line-height: 1.45;
+  color: var(--color-ink-soft);
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   SUPPORTER TIER MESSAGE
+   ========================================================= */
+
+.supporter-tier-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 12px;
+  padding: 11px 14px;
+
+  border-radius: 16px;
+
+  background: linear-gradient(120deg, rgba(255, 240, 214, 0.9), rgba(199, 154, 61, 0.16));
+  border: 1.5px solid rgba(199, 154, 61, 0.3);
+
+  color: var(--color-maroon);
+}
+
+.supporter-tier-message > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  font-size: 1.05rem;
+
+  animation: tier-bounce 2.6s ease-in-out infinite;
+}
+
+.supporter-tier-message p {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--color-maroon);
+}
+
+.supporter-tier-message.achieved {
+  background: linear-gradient(120deg, rgba(246, 213, 139, 0.35), rgba(163, 30, 34, 0.12));
+  border-color: rgba(163, 30, 34, 0.35);
+  box-shadow: 0 6px 18px rgba(163, 30, 34, 0.14);
+}
+
+.supporter-tier-message.achieved > span {
+  background: linear-gradient(145deg, #f6d58b, #a31e22);
+}
+
+@keyframes tier-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+
+/* =========================================================
+   CURRENT PUJO VIBE
+   ========================================================= */
+
+.current-pujo-vibe {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  margin: 4px 0 16px;
+  padding: 13px 14px;
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, rgba(255, 248, 236, 0.95), rgba(199, 154, 61, 0.14));
+  border: 1.5px solid rgba(199, 154, 61, 0.28);
+  box-shadow: 0 6px 16px rgba(125, 43, 32, 0.06);
+}
+
+.current-pujo-vibe > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 14px;
+
+  background: linear-gradient(145deg, #f6d58b, #c79a3d);
+  box-shadow: 0 4px 10px rgba(199, 154, 61, 0.35);
+
+  font-size: 1.2rem;
+}
+
+.current-pujo-vibe > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.current-pujo-vibe p {
+  margin: 0 0 2px;
+
+  font-family: var(--font-body);
+  font-size: 0.53rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  color: var(--color-ink-soft);
+  opacity: 0.75;
+}
+
+.current-pujo-vibe strong {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--color-ink);
+}
+
+.current-pujo-vibe > b {
+  flex-shrink: 0;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(145deg, #7d2b20, #a31e22);
+  box-shadow: 0 4px 10px rgba(125, 43, 32, 0.3);
+
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #fff8ec;
+
+  transform: rotate(-3deg);
+}
+
+
+/* =========================================================
+   PUJO RANK BOARD
+   ========================================================= */
+
+.pujo-rank-board {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  margin: 22px 0 16px;
+  padding: 18px;
+
+  border-radius: 22px;
+
+  background:
+    radial-gradient(circle at 8% 0%, rgba(246, 213, 139, 0.22), transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(163, 30, 34, 0.28), transparent 55%),
+    linear-gradient(145deg, #4b2135 0%, #5c2940 100%);
+
+  border: 1px solid rgba(199, 154, 61, 0.3);
+  box-shadow: 0 14px 32px rgba(50, 20, 40, 0.28);
+
+  color: #fff8ec;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.pujo-rank-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+.pujo-rank-heading-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pujo-rank-heading-icon {
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+
+  border-radius: 13px;
+
+  background: linear-gradient(145deg, rgba(246, 213, 139, 0.9), rgba(199, 154, 61, 0.5));
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.08),
+    0 6px 14px rgba(0, 0, 0, 0.25);
+
+  font-size: 1.15rem;
+}
+
+.pujo-rank-header p {
+  margin: 0 0 2px;
+
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: rgba(255, 248, 236, 0.75);
+}
+
+.pujo-rank-header h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff8ec;
+}
+
+.rank-board-sparkle {
+  flex-shrink: 0;
+
+  font-size: 1.15rem;
+  color: #f6d58b;
+
+  text-shadow: 0 0 10px rgba(246, 213, 139, 0.7);
+
+  animation: sparkle-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes sparkle-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+   ========================================================= */
+
+.pujo-rank-progress {
+  margin-bottom: 16px;
+}
+
+.pujo-rank-progress-track {
+  width: 100%;
+  height: 10px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25);
+
+  overflow: hidden;
+}
+
+.pujo-rank-progress-fill {
+  height: 100%;
+
+  border-radius: 999px;
+
+  background: linear-gradient(90deg, #f6d58b, #c79a3d 55%, #a31e22);
+  box-shadow: 0 0 10px rgba(246, 213, 139, 0.6);
+
+  transition: width 0.5s ease;
+}
+
+.pujo-rank-progress-labels {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 6px;
+
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: rgba(255, 248, 236, 0.65);
+}
+
+
+/* =========================================================
+   RANK LIST
+   ========================================================= */
+
+.pujo-rank-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pujo-rank-item {
+  display: grid;
+  grid-template-columns: 38px 1fr auto;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 46px;
+  padding: 7px 10px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.pujo-rank-item.unlocked {
+  background: rgba(199, 154, 61, 0.16);
+  border-color: rgba(199, 154, 61, 0.3);
+}
+
+.pujo-rank-item.next-rank {
+  background: rgba(255, 248, 236, 0.13);
+  border-color: rgba(246, 213, 139, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(246, 213, 139, 0.2),
+    0 6px 14px rgba(0, 0, 0, 0.15);
+  transform: translateX(3px);
+}
+
+.rank-icon {
+  display: grid;
+  place-items: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  font-size: 1rem;
+}
+
+.pujo-rank-item.unlocked .rank-icon {
+  background: linear-gradient(145deg, #f6d58b, #c79a3d);
+  box-shadow: 0 3px 8px rgba(199, 154, 61, 0.4);
+}
+
+.pujo-rank-item.next-rank .rank-icon {
+  background: linear-gradient(145deg, rgba(246, 213, 139, 0.5), rgba(199, 154, 61, 0.25));
+  box-shadow: 0 0 0 2px rgba(246, 213, 139, 0.4);
+}
+
+.rank-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.rank-info strong {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff8ec;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rank-info span {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  line-height: 1.2;
+  color: rgba(255, 248, 236, 0.7);
+}
+
+.rank-state {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  min-width: 30px;
+  justify-content: center;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.rank-state.state-unlocked {
+  background: linear-gradient(145deg, #f6d58b, #c79a3d);
+  color: #4b2135;
+}
+
+.rank-state.state-next {
+  background: rgba(246, 213, 139, 0.16);
+  border: 1px solid rgba(246, 213, 139, 0.5);
+  color: #f6d58b;
+  animation: next-pulse 1.8s ease-in-out infinite;
+}
+
+.rank-state.state-locked {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 248, 236, 0.45);
+  font-size: 0.75rem;
+  padding: 5px 8px;
+}
+
+@keyframes next-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(246, 213, 139, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(246, 213, 139, 0);
+  }
+}
+
+
+/* =========================================================
+   NOTE
+   ========================================================= */
+
+.rank-board-note {
+  margin: 14px 4px 0;
+  padding-top: 12px;
+
+  border-top: 1px dashed rgba(255, 248, 236, 0.2);
+
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  line-height: 1.5;
+  text-align: center;
+  color: rgba(255, 248, 236, 0.65);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .donation-screen .amount-button {
+    min-width: 58px;
+    padding: 8px 11px;
+    border-radius: 14px;
+  }
+
+  .donation-screen .amount-button-icon {
+    font-size: 0.95rem;
+  }
+
+  .donation-screen .amount-button-value {
+    font-size: 0.72rem;
+  }
+
+  .pujo-rank-board {
+    margin: 18px 0 14px;
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .pujo-rank-header {
+    margin-bottom: 12px;
+  }
+
+  .pujo-rank-heading-left {
+    gap: 8px;
+  }
+
+  .pujo-rank-heading-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+    font-size: 1rem;
+  }
+
+  .pujo-rank-header p {
+    font-size: 0.5rem;
+  }
+
+  .pujo-rank-header h2 {
+    font-size: 0.92rem;
+  }
+
+  .pujo-rank-progress-labels {
+    font-size: 0.56rem;
+  }
+
+  .pujo-rank-item {
+    grid-template-columns: 32px 1fr auto;
+    gap: 8px;
+    min-height: 42px;
+    padding: 6px 8px;
+    border-radius: 12px;
+  }
+
+  .rank-icon {
+    width: 29px;
+    height: 29px;
+    font-size: 0.88rem;
+  }
+
+  .rank-info strong {
+    font-size: 0.75rem;
+  }
+
+  .rank-info span {
+    font-size: 0.6rem;
+  }
+
+  .rank-state {
+    font-size: 0.53rem;
+    padding: 4px 7px;
+  }
+
+  .rank-state.state-locked {
+    font-size: 0.66rem;
+  }
+
+  .rank-board-note {
+    margin-top: 12px;
+    font-size: 0.6rem;
+  }
+
+  .supporter-tier-message {
+    padding: 9px 11px;
+    border-radius: 14px;
+  }
+
+  .supporter-tier-message p {
+    font-size: 0.66rem;
+  }
+
+  .current-pujo-vibe {
+    padding: 11px 12px;
+    gap: 10px;
+  }
+
+  .current-pujo-vibe > span {
+    width: 34px;
+    height: 34px;
+    font-size: 1.05rem;
+  }
+
+  .current-pujo-vibe strong {
+    font-size: 0.75rem;
+  }
+
+  .current-pujo-vibe > b {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+}
