@@ -1,4 +1,8 @@
 .env
-*.csv
+venv/
+frontend/node_modules/
 __pycache__/
 *.pyc
+
+data/*.db
+data/*_backup.db

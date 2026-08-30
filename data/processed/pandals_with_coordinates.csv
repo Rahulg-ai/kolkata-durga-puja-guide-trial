@@ -1,0 +1,71 @@
+pandal_name,nearest_metro_station,area,last_mile_transport,distance_m,approx_time_min,google_maps_link,metro_line,latitude,longitude
+Baghbazar Sarbojanin,Shyambazar,Baghbazar,Walk,700,9,https://www.google.com/maps/search/?api=1&query=Baghbazar+Sarbojanin+Durga+Puja+Kolkata,Blue Line (North-South),22.6033,88.3672
+Sikdar Bagan,Shyambazar,Hati Bagan,Walk,500,6,https://www.google.com/maps/search/?api=1&query=Sikdar+Bagan+Durga+Puja+Kolkata,Blue Line (North-South),22.5992,88.3718
+Hatibagan Nabinpally,Shyambazar,Hati Bagan,Walk,600,8,https://www.google.com/maps/search/?api=1&query=Hatibagan+Nabinpally+Durga+Puja+Kolkata,Blue Line (North-South),22.5996,88.3705
+Nalin Sarkar Street,Shyambazar,Hati Bagan,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Nalin+Sarkar+Street+Durga+Puja+Kolkata,Blue Line (North-South),22.5998,88.3712
+Hatibagan Sarbojonin,Shyambazar,Hati Bagan,Walk,650,8,https://www.google.com/maps/search/?api=1&query=Hatibagan+Sarbojonin+Durga+Puja+Kolkata,Blue Line (North-South),22.5986,88.3712
+Kashi Bose Lane,Shyambazar,Hati Bagan,Walk,900,11,https://www.google.com/maps/search/?api=1&query=Kashi+Bose+Lane+Durga+Puja+Kolkata,Blue Line (North-South),22.5956,88.3719
+Lalabagan Nabankur,Shyambazar,Raja Nabakrishna St,Walk,1000,12,https://www.google.com/maps/search/?api=1&query=Lalabagan+Nabankur+Durga+Puja+Kolkata,Blue Line (North-South),22.5969,88.3778
+Tala Park Prattay,Belgachia,Tala,Auto/Rickshaw,1200,10,https://www.google.com/maps/search/?api=1&query=Tala+Park+Prattay+Durga+Puja+Kolkata,Blue Line (North-South),22.6105,88.3762
+Dakshinpara,Belgachia,Dum Dum,Auto,2500,15,https://www.google.com/maps/search/?api=1&query=Dakshinpara+Durga+Puja+Kolkata,Blue Line (North-South),22.612,88.394
+Dumdum Park Bharat Chakra,Belgachia,Dum Dum Park,Auto,3000,20,https://www.google.com/maps/search/?api=1&query=Dumdum+Park+Bharat+Chakra+Durga+Puja+Kolkata,Blue Line (North-South),22.615,88.406
+Dumdum Park Sarbajanin,Belgachia,Dum Dum Park,Auto,3000,20,https://www.google.com/maps/search/?api=1&query=Dumdum+Park+Sarbajanin+Durga+Puja+Kolkata,Blue Line (North-South),22.6162,88.4055
+Dumdum Park Tarun Dal,Belgachia,Dum Dum Park,Auto,3100,20,https://www.google.com/maps/search/?api=1&query=Dumdum+Park+Tarun+Dal+Durga+Puja+Kolkata,Blue Line (North-South),22.6139,88.4072
+Sree Bhumi Sporting Club,Belgachia,Lake Town,Auto/Bus,3500,25,https://www.google.com/maps/search/?api=1&query=Sree+Bhumi+Sporting+Club+Durga+Puja+Kolkata,Blue Line (North-South),22.6131,88.4024
+Golaghata Sammilani,Belgachia,Ultadanga,Auto,2000,15,https://www.google.com/maps/search/?api=1&query=Golaghata+Sammilani+Durga+Puja+Kolkata,Blue Line (North-South),22.6052,88.3995
+Dakshindari Youth,Belgachia,Ultadanga,Auto,2200,15,https://www.google.com/maps/search/?api=1&query=Dakshindari+Youth+Durga+Puja+Kolkata,Blue Line (North-South),22.6041,88.3912
+Telengabagan,Belgachia,Ultadanga,Auto,2500,18,https://www.google.com/maps/search/?api=1&query=Telengabagan+Durga+Puja+Kolkata,Blue Line (North-South),22.5975,88.3842
+Sovabazar Boro Rajbari,Shobhabazar Sutanuti,Sovabazar,Walk,400,5,https://www.google.com/maps/search/?api=1&query=Sovabazar+Boro+Rajbari+Durga+Puja+Kolkata,Blue Line (North-South),22.5947,88.3619
+Sovabazar Choto Rajbari,Shobhabazar Sutanuti,Sovabazar,Walk,450,6,https://www.google.com/maps/search/?api=1&query=Sovabazar+Choto+Rajbari+Durga+Puja+Kolkata,Blue Line (North-South),22.5942,88.3625
+Jagat Mukherjee Park,Shobhabazar Sutanuti,Sovabazar,Walk,600,8,https://www.google.com/maps/search/?api=1&query=Jagat+Mukherjee+Park+Durga+Puja+Kolkata,Blue Line (North-South),22.5972,88.3661
+Kumartuli Sarbojanin,Shobhabazar Sutanuti,Kumartuli,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Kumartuli+Sarbojanin+Durga+Puja+Kolkata,Blue Line (North-South),22.6015,88.3639
+Kumartuli Park,Shobhabazar Sutanuti,Kumartuli,Walk,750,9,https://www.google.com/maps/search/?api=1&query=Kumartuli+Park+Durga+Puja+Kolkata,Blue Line (North-South),22.6022,88.3645
+Beniatola Sarbojonin,Shobhabazar Sutanuti,Beniatola,Walk,600,7,https://www.google.com/maps/search/?api=1&query=Beniatola+Sarbojonin+Durga+Puja+Kolkata,Blue Line (North-South),22.5935,88.3588
+Ahiritola Sarbojonin,Shobhabazar Sutanuti,Ahiritola,Walk,900,12,https://www.google.com/maps/search/?api=1&query=Ahiritola+Sarbojonin+Durga+Puja+Kolkata,Blue Line (North-South),22.5964,88.3582
+Jorasanko Sadharan,Girish Park,Jorasanko,Walk,500,6,https://www.google.com/maps/search/?api=1&query=Jorasanko+Sadharan+Durga+Puja+Kolkata,Blue Line (North-South),22.5852,88.3615
+Chorebagan Sarbojonin,Girish Park,Chorebagan,Walk,600,7,https://www.google.com/maps/search/?api=1&query=Chorebagan+Sarbojonin+Durga+Puja+Kolkata,Blue Line (North-South),22.5831,88.3629
+Simla Byayam Samity,Girish Park,Simla St,Walk,350,5,https://www.google.com/maps/search/?api=1&query=Simla+Byayam+Samity+Durga+Puja+Kolkata,Blue Line (North-South),22.5888,88.3642
+Chaltabagan Lohapatty,Girish Park,Amherst St,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Chaltabagan+Lohapatty+Durga+Puja+Kolkata,Blue Line (North-South),22.5847,88.3705
+Mohammad Ali Park,MG Road,Chittaranjan Ave,Walk,200,3,https://www.google.com/maps/search/?api=1&query=Mohammad+Ali+Park+Durga+Puja+Kolkata,Blue Line (North-South),22.5781,88.3628
+College Square,MG Road,College St,Walk,600,7,https://www.google.com/maps/search/?api=1&query=College+Square+Durga+Puja+Kolkata,Blue Line (North-South),22.5746,88.3638
+Santosh Mitra Square,Central,Bowbazar,Walk,400,5,https://www.google.com/maps/search/?api=1&query=Santosh+Mitra+Square+Durga+Puja+Kolkata,Blue Line (North-South),22.5658,88.3644
+Sealdah Athletic Club,Central,Sealdah,Walk,1000,12,https://www.google.com/maps/search/?api=1&query=Sealdah+Athletic+Club+Durga+Puja+Kolkata,Blue Line (North-South),22.5681,88.3712
+Subodh Mallick Square,Central,Wellington,Walk,600,8,https://www.google.com/maps/search/?api=1&query=Subodh+Mallick+Square+Durga+Puja+Kolkata,Blue Line (North-South),22.5628,88.3621
+Kapalitola Sarbajanin,Central,Bowbazar,Walk,500,6,https://www.google.com/maps/search/?api=1&query=Kapalitola+Sarbajanin+Durga+Puja+Kolkata,Blue Line (North-South),22.5641,88.3598
+68 Pally,Netaji Bhawan,Bhowanipur,Walk,400,5,https://www.google.com/maps/search/?api=1&query=68+Pally+Durga+Puja+Kolkata,Blue Line (North-South),22.5358,88.3469
+76 Pally,Netaji Bhawan,Bhowanipur,Walk,500,6,https://www.google.com/maps/search/?api=1&query=76+Pally+Durga+Puja+Kolkata,Blue Line (North-South),22.5369,88.3475
+Bhowanipur 75 Pally,Netaji Bhawan,Bhowanipur,Walk,300,4,https://www.google.com/maps/search/?api=1&query=Bhowanipur+75+Pally+Durga+Puja+Kolkata,Blue Line (North-South),22.5342,88.3461
+22 Pally (Northern Park),Netaji Bhawan,Bhowanipur,Walk,600,7,https://www.google.com/maps/search/?api=1&query=22+Pally+(Northern+Park)+Durga+Puja+Kolkata,Blue Line (North-South),22.5388,88.3488
+Paddapukur Youth,Netaji Bhawan,Paddapukur,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Paddapukur+Youth+Durga+Puja+Kolkata,Blue Line (North-South),22.5395,88.3521
+Harish Park,Netaji Bhawan,Harish Park,Walk,700,9,https://www.google.com/maps/search/?api=1&query=Harish+Park+Durga+Puja+Kolkata,Blue Line (North-South),22.5361,88.3418
+Agradut Udaya Sangha,Netaji Bhawan,Bhowanipur,Walk,600,8,https://www.google.com/maps/search/?api=1&query=Agradut+Udaya+Sangha+Durga+Puja+Kolkata,Blue Line (North-South),22.5331,88.3442
+Swadhin Sangha,Netaji Bhawan,Bhowanipur,Walk,550,7,https://www.google.com/maps/search/?api=1&query=Swadhin+Sangha+Durga+Puja+Kolkata,Blue Line (North-South),22.5401,88.3452
+Jatin Das Park,Jatin Das Park,Hazra,Walk,100,2,https://www.google.com/maps/search/?api=1&query=Jatin+Das+Park+Durga+Puja+Kolkata,Blue Line (North-South),22.523,88.347
+23 Pally,Jatin Das Park,Harish Mukherjee Rd,Walk,400,5,https://www.google.com/maps/search/?api=1&query=23+Pally+Durga+Puja+Kolkata,Blue Line (North-South),22.522,88.345
+Forward Club,Jatin Das Park,Kalighat,Walk,500,6,https://www.google.com/maps/search/?api=1&query=Forward+Club+Durga+Puja+Kolkata,Blue Line (North-South),22.5311,88.3492
+Matri Mandir,Jatin Das Park,Amherst St,Walk,600,8,https://www.google.com/maps/search/?api=1&query=Matri+Mandir+Durga+Puja+Kolkata,Blue Line (North-South),22.5285,88.3562
+Bakul Bagan,Jatin Das Park,Bhowanipur,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Bakul+Bagan+Durga+Puja+Kolkata,Blue Line (North-South),22.5319,88.3455
+Chetla Agrani Club,Kalighat,Chetla,Auto,1500,10,https://www.google.com/maps/search/?api=1&query=Chetla+Agrani+Club+Durga+Puja+Kolkata,Blue Line (North-South),22.5186,88.3375
+Alipore Sarbojonin,Kalighat,Alipore,Auto,2000,15,https://www.google.com/maps/search/?api=1&query=Alipore+Sarbojonin+Durga+Puja+Kolkata,Blue Line (North-South),22.5255,88.3392
+Kolahol Gosthi,Kalighat,Rashbehari,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Kolahol+Gosthi+Durga+Puja+Kolkata,Blue Line (North-South),22.5228,88.3445
+66 Pally,Kalighat,Rashbehari,Walk,500,6,https://www.google.com/maps/search/?api=1&query=66+Pally+Durga+Puja+Kolkata,Blue Line (North-South),22.5211,88.3466
+Badamtala Ashar Sangha,Kalighat,Rashbehari,Walk,400,5,https://www.google.com/maps/search/?api=1&query=Badamtala+Ashar+Sangha+Durga+Puja+Kolkata,Blue Line (North-South),22.5206,88.3475
+Deshapriya Park,Kalighat,Rashbehari,Walk,1000,12,https://www.google.com/maps/search/?api=1&query=Deshapriya+Park+Durga+Puja+Kolkata,Blue Line (North-South),22.5189,88.3519
+Tridhara Sammilani,Kalighat,Manoharpukur,Walk,900,11,https://www.google.com/maps/search/?api=1&query=Tridhara+Sammilani+Durga+Puja+Kolkata,Blue Line (North-South),22.5215,88.3533
+Ballygunge Cultural,Kalighat,Ballygunge,Auto/Rickshaw,1500,15,https://www.google.com/maps/search/?api=1&query=Ballygunge+Cultural+Durga+Puja+Kolkata,Blue Line (North-South),22.5178,88.3585
+Hindusthan Park,Kalighat,Gariahat,Auto,1800,15,https://www.google.com/maps/search/?api=1&query=Hindusthan+Park+Durga+Puja+Kolkata,Blue Line (North-South),22.5175,88.3611
+Hindusthan Club,Kalighat,Gariahat,Auto,1900,16,https://www.google.com/maps/search/?api=1&query=Hindusthan+Club+Durga+Puja+Kolkata,Blue Line (North-South),22.5169,88.3625
+Singhi Park,Kalighat,Gariahat,Auto,2000,16,https://www.google.com/maps/search/?api=1&query=Singhi+Park+Durga+Puja+Kolkata,Blue Line (North-South),22.5199,88.3678
+Ekdalia Evergreen,Kalighat,Gariahat,Auto,2100,17,https://www.google.com/maps/search/?api=1&query=Ekdalia+Evergreen+Durga+Puja+Kolkata,Blue Line (North-South),22.5195,88.3662
+Bosepukur Sitala Mandir,Kalighat,Kasba,Auto/Bus,3500,25,https://www.google.com/maps/search/?api=1&query=Bosepukur+Sitala+Mandir+Durga+Puja+Kolkata,Blue Line (North-South),22.5222,88.3855
+Rajdanga Naba Uday Sangha,Kalighat,Kasba,Auto/Bus,3800,28,https://www.google.com/maps/search/?api=1&query=Rajdanga+Naba+Uday+Sangha+Durga+Puja+Kolkata,Blue Line (North-South),22.5201,88.3892
+Mudiali,Rabindra Sarobar,Southern Ave,Walk,400,5,https://www.google.com/maps/search/?api=1&query=Mudiali+Durga+Puja+Kolkata,Blue Line (North-South),22.5113,88.3471
+Shib Mandir,Rabindra Sarobar,Southern Ave,Walk,600,7,https://www.google.com/maps/search/?api=1&query=Shib+Mandir+Durga+Puja+Kolkata,Blue Line (North-South),22.5108,88.3491
+Trikone Park,Rabindra Sarobar,Southern Ave,Walk,700,8,https://www.google.com/maps/search/?api=1&query=Trikone+Park+Durga+Puja+Kolkata,Blue Line (North-South),22.5065,88.3458
+Haridevpur 41 Pally,Mahanayak Uttam Kumar,Haridevpur,Auto,2500,15,https://www.google.com/maps/search/?api=1&query=Haridevpur+41+Pally+Durga+Puja+Kolkata,Blue Line (North-South),22.4862,88.3341
+Vivekananda Park,Mahanayak Uttam Kumar,Haridevpur,Auto,2200,14,https://www.google.com/maps/search/?api=1&query=Vivekananda+Park+Durga+Puja+Kolkata,Blue Line (North-South),22.4851,88.3312
+Ajeya Sanghati,Mahanayak Uttam Kumar,Haridevpur,Auto,2600,16,https://www.google.com/maps/search/?api=1&query=Ajeya+Sanghati+Durga+Puja+Kolkata,Blue Line (North-South),22.4885,88.3355
+New Sporting Club,Mahanayak Uttam Kumar,Haridevpur,Auto,3000,18,https://www.google.com/maps/search/?api=1&query=New+Sporting+Club+Durga+Puja+Kolkata,Blue Line (North-South),22.4842,88.3333
+Barisha Club,Mahanayak Uttam Kumar,Behala,Auto/Bus,4000,25,https://www.google.com/maps/search/?api=1&query=Barisha+Club+Durga+Puja+Kolkata,Blue Line (North-South),22.4891,88.3142
+Naktala Udayan Sangha,Gitanjali,Naktala,Walk,300,4,https://www.google.com/maps/search/?api=1&query=Naktala+Udayan+Sangha+Durga+Puja+Kolkata,Blue Line (North-South),22.4721,88.3622
+Baishnabghata Balak Samity,Gitanjali,Garia,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Baishnabghata+Balak+Samity+Durga+Puja+Kolkata,Blue Line (North-South),22.4688,88.3655

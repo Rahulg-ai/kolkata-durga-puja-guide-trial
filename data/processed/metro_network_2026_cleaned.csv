@@ -1,0 +1,51 @@
+line,station_name,sequence
+Blue Line,Dakshineswar,1
+Blue Line,Baranagar,2
+Blue Line,Noapara,3
+Blue Line,Dum Dum,4
+Blue Line,Belgachia,5
+Blue Line,Shyambazar,6
+Blue Line,Shobhabazar Sutanuti,7
+Blue Line,Girish Park,8
+Blue Line,M.G. Road,9
+Blue Line,Central,10
+Blue Line,Chandni Chowk,11
+Blue Line,Esplanade,12
+Blue Line,Park Street,13
+Blue Line,Maidan,14
+Blue Line,Rabindra Sadan,15
+Blue Line,Netaji Bhavan,16
+Blue Line,Jatin Das Park,17
+Blue Line,Kalighat,18
+Blue Line,Rabindra Sarobar,19
+Blue Line,Mahanayak Uttam Kumar,20
+Blue Line,Netaji,21
+Blue Line,Masterda Surya Sen,22
+Blue Line,Gitanjali,23
+Blue Line,Kavi Nazrul,24
+Blue Line,Shahid Khudiram,25
+Blue Line,Kavi Subhash,26
+Green Line,Howrah Maidan,1
+Green Line,Howrah,2
+Green Line,Mahakaran,3
+Green Line,Esplanade,4
+Green Line,Sealdah,5
+Green Line,Phoolbagan,6
+Green Line,Salt Lake Stadium,7
+Green Line,Bengal Chemical,8
+Green Line,City Centre,9
+Green Line,Central Park,10
+Green Line,Karunamoyee,11
+Green Line,Salt Lake Sector V,12
+Orange Line,Kavi Subhash,1
+Orange Line,Satyajit Ray,2
+Orange Line,Jyotirindra Nandi,3
+Orange Line,Kavi Sukanta,4
+Orange Line,Hemanta Mukhopadhyay,5
+Purple Line,Joka,1
+Purple Line,Thakurpukur,2
+Purple Line,Sakherbazar,3
+Purple Line,Behala Chowrasta,4
+Purple Line,Behala Bazar,5
+Purple Line,Taratala,6
+Purple Line,Majerhat,7

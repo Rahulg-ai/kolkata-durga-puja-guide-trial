@@ -1,0 +1,71 @@
+pandal_name,nearest_metro_station,area,last_mile_transport,distance_m,approx_time_min,google_maps_link
+Baghbazar Sarbojanin,Shyambazar,Baghbazar,Walk,700,9,https://www.google.com/maps/search/?api=1&query=Baghbazar+Sarbojanin+Durga+Puja+Kolkata
+Sikdar Bagan,Shyambazar,Hati Bagan,Walk,500,6,https://www.google.com/maps/search/?api=1&query=Sikdar+Bagan+Durga+Puja+Kolkata
+Hatibagan Nabinpally,Shyambazar,Hati Bagan,Walk,600,8,https://www.google.com/maps/search/?api=1&query=Hatibagan+Nabinpally+Durga+Puja+Kolkata
+Nalin Sarkar Street,Shyambazar,Hati Bagan,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Nalin+Sarkar+Street+Durga+Puja+Kolkata
+Hatibagan Sarbojonin,Shyambazar,Hati Bagan,Walk,650,8,https://www.google.com/maps/search/?api=1&query=Hatibagan+Sarbojonin+Durga+Puja+Kolkata
+Kashi Bose Lane,Shyambazar,Hati Bagan,Walk,900,11,https://www.google.com/maps/search/?api=1&query=Kashi+Bose+Lane+Durga+Puja+Kolkata
+Lalabagan Nabankur,Shyambazar,Raja Nabakrishna St,Walk,1000,12,https://www.google.com/maps/search/?api=1&query=Lalabagan+Nabankur+Durga+Puja+Kolkata
+Tala Park Prattay,Belgachia,Tala,Auto/Rickshaw,1200,10,https://www.google.com/maps/search/?api=1&query=Tala+Park+Prattay+Durga+Puja+Kolkata
+Dakshinpara,Belgachia,Dum Dum,Auto,2500,15,https://www.google.com/maps/search/?api=1&query=Dakshinpara+Durga+Puja+Kolkata
+Dumdum Park Bharat Chakra,Belgachia,Dum Dum Park,Auto,3000,20,https://www.google.com/maps/search/?api=1&query=Dumdum+Park+Bharat+Chakra+Durga+Puja+Kolkata
+Dumdum Park Sarbajanin,Belgachia,Dum Dum Park,Auto,3000,20,https://www.google.com/maps/search/?api=1&query=Dumdum+Park+Sarbajanin+Durga+Puja+Kolkata
+Dumdum Park Tarun Dal,Belgachia,Dum Dum Park,Auto,3100,20,https://www.google.com/maps/search/?api=1&query=Dumdum+Park+Tarun+Dal+Durga+Puja+Kolkata
+Sree Bhumi Sporting Club,Belgachia,Lake Town,Auto/Bus,3500,25,https://www.google.com/maps/search/?api=1&query=Sree+Bhumi+Sporting+Club+Durga+Puja+Kolkata
+Golaghata Sammilani,Belgachia,Ultadanga,Auto,2000,15,https://www.google.com/maps/search/?api=1&query=Golaghata+Sammilani+Durga+Puja+Kolkata
+Dakshindari Youth,Belgachia,Ultadanga,Auto,2200,15,https://www.google.com/maps/search/?api=1&query=Dakshindari+Youth+Durga+Puja+Kolkata
+Telengabagan,Belgachia,Ultadanga,Auto,2500,18,https://www.google.com/maps/search/?api=1&query=Telengabagan+Durga+Puja+Kolkata
+Sovabazar Boro Rajbari,Shobhabazar Sutanuti,Sovabazar,Walk,400,5,https://www.google.com/maps/search/?api=1&query=Sovabazar+Boro+Rajbari+Durga+Puja+Kolkata
+Sovabazar Choto Rajbari,Shobhabazar Sutanuti,Sovabazar,Walk,450,6,https://www.google.com/maps/search/?api=1&query=Sovabazar+Choto+Rajbari+Durga+Puja+Kolkata
+Jagat Mukherjee Park,Shobhabazar Sutanuti,Sovabazar,Walk,600,8,https://www.google.com/maps/search/?api=1&query=Jagat+Mukherjee+Park+Durga+Puja+Kolkata
+Kumartuli Sarbojanin,Shobhabazar Sutanuti,Kumartuli,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Kumartuli+Sarbojanin+Durga+Puja+Kolkata
+Kumartuli Park,Shobhabazar Sutanuti,Kumartuli,Walk,750,9,https://www.google.com/maps/search/?api=1&query=Kumartuli+Park+Durga+Puja+Kolkata
+Beniatola Sarbojonin,Shobhabazar Sutanuti,Beniatola,Walk,600,7,https://www.google.com/maps/search/?api=1&query=Beniatola+Sarbojonin+Durga+Puja+Kolkata
+Ahiritola Sarbojonin,Shobhabazar Sutanuti,Ahiritola,Walk,900,12,https://www.google.com/maps/search/?api=1&query=Ahiritola+Sarbojonin+Durga+Puja+Kolkata
+Jorasanko Sadharan,Girish Park,Jorasanko,Walk,500,6,https://www.google.com/maps/search/?api=1&query=Jorasanko+Sadharan+Durga+Puja+Kolkata
+Chorebagan Sarbojonin,Girish Park,Chorebagan,Walk,600,7,https://www.google.com/maps/search/?api=1&query=Chorebagan+Sarbojonin+Durga+Puja+Kolkata
+Simla Byayam Samity,Girish Park,Simla St,Walk,350,5,https://www.google.com/maps/search/?api=1&query=Simla+Byayam+Samity+Durga+Puja+Kolkata
+Chaltabagan Lohapatty,Girish Park,Amherst St,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Chaltabagan+Lohapatty+Durga+Puja+Kolkata
+Mohammad Ali Park,MG Road,Chittaranjan Ave,Walk,200,3,https://www.google.com/maps/search/?api=1&query=Mohammad+Ali+Park+Durga+Puja+Kolkata
+College Square,MG Road,College St,Walk,600,7,https://www.google.com/maps/search/?api=1&query=College+Square+Durga+Puja+Kolkata
+Santosh Mitra Square,Central,Bowbazar,Walk,400,5,https://www.google.com/maps/search/?api=1&query=Santosh+Mitra+Square+Durga+Puja+Kolkata
+Sealdah Athletic Club,Central,Sealdah,Walk,1000,12,https://www.google.com/maps/search/?api=1&query=Sealdah+Athletic+Club+Durga+Puja+Kolkata
+Subodh Mallick Square,Central,Wellington,Walk,600,8,https://www.google.com/maps/search/?api=1&query=Subodh+Mallick+Square+Durga+Puja+Kolkata
+Kapalitola Sarbajanin,Central,Bowbazar,Walk,500,6,https://www.google.com/maps/search/?api=1&query=Kapalitola+Sarbajanin+Durga+Puja+Kolkata
+68 Pally,Netaji Bhawan,Bhowanipur,Walk,400,5,https://www.google.com/maps/search/?api=1&query=68+Pally+Durga+Puja+Kolkata
+76 Pally,Netaji Bhawan,Bhowanipur,Walk,500,6,https://www.google.com/maps/search/?api=1&query=76+Pally+Durga+Puja+Kolkata
+Bhowanipur 75 Pally,Netaji Bhawan,Bhowanipur,Walk,300,4,https://www.google.com/maps/search/?api=1&query=Bhowanipur+75+Pally+Durga+Puja+Kolkata
+22 Pally (Northern Park),Netaji Bhawan,Bhowanipur,Walk,600,7,https://www.google.com/maps/search/?api=1&query=22+Pally+(Northern+Park)+Durga+Puja+Kolkata
+Paddapukur Youth,Netaji Bhawan,Paddapukur,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Paddapukur+Youth+Durga+Puja+Kolkata
+Harish Park,Netaji Bhawan,Harish Park,Walk,700,9,https://www.google.com/maps/search/?api=1&query=Harish+Park+Durga+Puja+Kolkata
+Agradut Udaya Sangha,Netaji Bhawan,Bhowanipur,Walk,600,8,https://www.google.com/maps/search/?api=1&query=Agradut+Udaya+Sangha+Durga+Puja+Kolkata
+Swadhin Sangha,Netaji Bhawan,Bhowanipur,Walk,550,7,https://www.google.com/maps/search/?api=1&query=Swadhin+Sangha+Durga+Puja+Kolkata
+Jatin Das Park,Jatin Das Park,Hazra,Walk,100,2,https://www.google.com/maps/search/?api=1&query=Jatin+Das+Park+Durga+Puja+Kolkata
+23 Pally,Jatin Das Park,Harish Mukherjee Rd,Walk,400,5,https://www.google.com/maps/search/?api=1&query=23+Pally+Durga+Puja+Kolkata
+Forward Club,Jatin Das Park,Kalighat,Walk,500,6,https://www.google.com/maps/search/?api=1&query=Forward+Club+Durga+Puja+Kolkata
+Matri Mandir,Jatin Das Park,Amherst St,Walk,600,8,https://www.google.com/maps/search/?api=1&query=Matri+Mandir+Durga+Puja+Kolkata
+Bakul Bagan,Jatin Das Park,Bhowanipur,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Bakul+Bagan+Durga+Puja+Kolkata
+Chetla Agrani Club,Kalighat,Chetla,Auto,1500,10,https://www.google.com/maps/search/?api=1&query=Chetla+Agrani+Club+Durga+Puja+Kolkata
+Alipore Sarbojonin,Kalighat,Alipore,Auto,2000,15,https://www.google.com/maps/search/?api=1&query=Alipore+Sarbojonin+Durga+Puja+Kolkata
+Kolahol Gosthi,Kalighat,Rashbehari,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Kolahol+Gosthi+Durga+Puja+Kolkata
+66 Pally,Kalighat,Rashbehari,Walk,500,6,https://www.google.com/maps/search/?api=1&query=66+Pally+Durga+Puja+Kolkata
+Badamtala Ashar Sangha,Kalighat,Rashbehari,Walk,400,5,https://www.google.com/maps/search/?api=1&query=Badamtala+Ashar+Sangha+Durga+Puja+Kolkata
+Deshapriya Park,Kalighat,Rashbehari,Walk,1000,12,https://www.google.com/maps/search/?api=1&query=Deshapriya+Park+Durga+Puja+Kolkata
+Tridhara Sammilani,Kalighat,Manoharpukur,Walk,900,11,https://www.google.com/maps/search/?api=1&query=Tridhara+Sammilani+Durga+Puja+Kolkata
+Ballygunge Cultural,Kalighat,Ballygunge,Auto/Rickshaw,1500,15,https://www.google.com/maps/search/?api=1&query=Ballygunge+Cultural+Durga+Puja+Kolkata
+Hindusthan Park,Kalighat,Gariahat,Auto,1800,15,https://www.google.com/maps/search/?api=1&query=Hindusthan+Park+Durga+Puja+Kolkata
+Hindusthan Club,Kalighat,Gariahat,Auto,1900,16,https://www.google.com/maps/search/?api=1&query=Hindusthan+Club+Durga+Puja+Kolkata
+Singhi Park,Kalighat,Gariahat,Auto,2000,16,https://www.google.com/maps/search/?api=1&query=Singhi+Park+Durga+Puja+Kolkata
+Ekdalia Evergreen,Kalighat,Gariahat,Auto,2100,17,https://www.google.com/maps/search/?api=1&query=Ekdalia+Evergreen+Durga+Puja+Kolkata
+Bosepukur Sitala Mandir,Kalighat,Kasba,Auto/Bus,3500,25,https://www.google.com/maps/search/?api=1&query=Bosepukur+Sitala+Mandir+Durga+Puja+Kolkata
+Rajdanga Naba Uday Sangha,Kalighat,Kasba,Auto/Bus,3800,28,https://www.google.com/maps/search/?api=1&query=Rajdanga+Naba+Uday+Sangha+Durga+Puja+Kolkata
+Mudiali,Rabindra Sarobar,Southern Ave,Walk,400,5,https://www.google.com/maps/search/?api=1&query=Mudiali+Durga+Puja+Kolkata
+Shib Mandir,Rabindra Sarobar,Southern Ave,Walk,600,7,https://www.google.com/maps/search/?api=1&query=Shib+Mandir+Durga+Puja+Kolkata
+Trikone Park,Rabindra Sarobar,Southern Ave,Walk,700,8,https://www.google.com/maps/search/?api=1&query=Trikone+Park+Durga+Puja+Kolkata
+Haridevpur 41 Pally,Mahanayak Uttam Kumar,Haridevpur,Auto,2500,15,https://www.google.com/maps/search/?api=1&query=Haridevpur+41+Pally+Durga+Puja+Kolkata
+Vivekananda Park,Mahanayak Uttam Kumar,Haridevpur,Auto,2200,14,https://www.google.com/maps/search/?api=1&query=Vivekananda+Park+Durga+Puja+Kolkata
+Ajeya Sanghati,Mahanayak Uttam Kumar,Haridevpur,Auto,2600,16,https://www.google.com/maps/search/?api=1&query=Ajeya+Sanghati+Durga+Puja+Kolkata
+New Sporting Club,Mahanayak Uttam Kumar,Haridevpur,Auto,3000,18,https://www.google.com/maps/search/?api=1&query=New+Sporting+Club+Durga+Puja+Kolkata
+Barisha Club,Mahanayak Uttam Kumar,Behala,Auto/Bus,4000,25,https://www.google.com/maps/search/?api=1&query=Barisha+Club+Durga+Puja+Kolkata
+Naktala Udayan Sangha,Gitanjali,Naktala,Walk,300,4,https://www.google.com/maps/search/?api=1&query=Naktala+Udayan+Sangha+Durga+Puja+Kolkata
+Baishnabghata Balak Samity,Gitanjali,Garia,Walk,800,10,https://www.google.com/maps/search/?api=1&query=Baishnabghata+Balak+Samity+Durga+Puja+Kolkata

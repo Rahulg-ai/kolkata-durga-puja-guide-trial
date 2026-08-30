@@ -1,0 +1,51 @@
+line,station_name,sequence,interchange___notes
+Blue Line (North-South),Dakshineswar,1,
+Blue Line (North-South),Baranagar,2,
+Blue Line (North-South),Noapara,3,
+Blue Line (North-South),Dum Dum,4,Connects to Suburban Rail
+Blue Line (North-South),Belgachia,5,
+Blue Line (North-South),Shyambazar,6,
+Blue Line (North-South),Shobhabazar Sutanuti,7,
+Blue Line (North-South),Girish Park,8,
+Blue Line (North-South),M.G. Road,9,
+Blue Line (North-South),Central,10,
+Blue Line (North-South),Chandni Chowk,11,
+Blue Line (North-South),Esplanade,12,Interchange with Green Line (Howrah Sector)
+Blue Line (North-South),Park Street,13,
+Blue Line (North-South),Maidan,14,
+Blue Line (North-South),Rabindra Sadan,15,
+Blue Line (North-South),Netaji Bhavan,16,
+Blue Line (North-South),Jatin Das Park,17,
+Blue Line (North-South),Kalighat,18,
+Blue Line (North-South),Rabindra Sarobar,19,
+Blue Line (North-South),Mahanayak Uttam Kumar,20,
+Blue Line (North-South),Netaji,21,
+Blue Line (North-South),Masterda Surya Sen,22,
+Blue Line (North-South),Gitanjali,23,
+Blue Line (North-South),Kavi Nazrul,24,
+Blue Line (North-South),Shahid Khudiram,25,
+Blue Line (North-South),Kavi Subhash,26,Interchange with Orange Line
+Green Line (Howrah Sector),Howrah Maidan,1,
+Green Line (Howrah Sector),Howrah,2,Connects to Indian Railways (Howrah Station)
+Green Line (Howrah Sector),Mahakaran,3,
+Green Line (Howrah Sector),Esplanade,4,Interchange with Blue Line
+Green Line (Salt Lake Sector),Sealdah,1,Connects to Indian Railways (Sealdah Station)
+Green Line (Salt Lake Sector),Phoolbagan,2,
+Green Line (Salt Lake Sector),Salt Lake Stadium,3,
+Green Line (Salt Lake Sector),Bengal Chemical,4,
+Green Line (Salt Lake Sector),City Centre,5,
+Green Line (Salt Lake Sector),Central Park,6,
+Green Line (Salt Lake Sector),Karunamoyee,7,
+Green Line (Salt Lake Sector),Salt Lake Sector V,8,IT Hub Terminal
+Orange Line,Kavi Subhash,1,Interchange with Blue Line
+Orange Line,Satyajit Ray,2,
+Orange Line,Jyotirindra Nandi,3,
+Orange Line,Kavi Sukanta,4,
+Orange Line,Hemanta Mukhopadhyay,5,
+Purple Line,Joka,1,
+Purple Line,Thakurpukur,2,
+Purple Line,Sakherbazar,3,
+Purple Line,Behala Chowrasta,4,
+Purple Line,Behala Bazar,5,
+Purple Line,Taratala,6,
+Purple Line,Majerhat,7,Connects to Suburban Rail
