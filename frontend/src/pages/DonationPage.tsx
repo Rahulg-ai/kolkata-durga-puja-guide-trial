@@ -190,6 +190,9 @@ function DonationPage({
   const [loading, setLoading] =
     useState(false);
 
+  const [showSuccessModal, setShowSuccessModal] =
+    useState(false);
+
 
   /* =================================================
      RAZORPAY SCRIPT
@@ -243,71 +246,64 @@ function DonationPage({
 
 
   /* =================================================
-     NAME AVAILABILITY
-     ================================================= */
+   NAME AVAILABILITY
+   ================================================= */
 
   useEffect(() => {
+    const trimmedName = name.trim();
 
-    if (!name.trim()) {
-
-      setNameAvailable(
-        null
-      );
-
+    if (!trimmedName) {
+      setNameAvailable(null);
       return;
     }
 
+    const controller = new AbortController();
 
-    const timer =
-      window.setTimeout(
-        async () => {
-
-          try {
-
-            const response =
-              await fetch(
-                `${API_BASE_URL}/supporters/check-name?name=${encodeURIComponent(
-                  name.trim()
-                )}`
-              );
-
-
-            if (!response.ok) {
-
-              setNameAvailable(
-                null
-              );
-
-              return;
+    const timer = window.setTimeout(
+      async () => {
+        try {
+          const response = await fetch(
+            `${API_BASE_URL}/supporters/check-name?name=${encodeURIComponent(
+              trimmedName
+            )}`,
+            {
+              signal: controller.signal,
             }
+          );
 
-
-            const data =
-              await response.json();
-
-
-            setNameAvailable(
-              data.available === true
-            );
-
-          } catch {
-
-            setNameAvailable(
-              null
-            );
-
+          if (!response.ok) {
+            setNameAvailable(null);
+            return;
           }
 
-        },
-        400
-      );
+          const data = await response.json();
 
+          setNameAvailable(
+            data.available === true
+          );
+        } catch (error) {
+          if (
+            error instanceof DOMException &&
+            error.name === "AbortError"
+          ) {
+            return;
+          }
 
-    return () =>
-      window.clearTimeout(
-        timer
-      );
+          console.error(
+            "Name availability check failed:",
+            error
+          );
 
+          setNameAvailable(null);
+        }
+      },
+      250
+    );
+
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
   }, [name]);
 
 
@@ -625,13 +621,9 @@ function DonationPage({
                 verification.success
               ) {
 
-                alert(
-                  `You're officially Pujo Squad, ${name.trim()}! 🎉❤️`
+                setShowSuccessModal(
+                  true
                 );
-
-
-                window.location.href =
-                  "/";
 
               } else {
 
@@ -775,14 +767,14 @@ function DonationPage({
           </div>
 
 
-          {nameAvailable === true && (
+          {name.trim() && nameAvailable === true && (
             <p className="name-success">
               ✓ Your name is available
             </p>
           )}
 
 
-          {nameAvailable === false && (
+          {name.trim() && nameAvailable === false && (
             <p className="name-error">
               ⚠ That name is already taken.
             </p>
@@ -1202,6 +1194,85 @@ function DonationPage({
         </button>
 
       </section>
+
+      {showSuccessModal && (
+        <div
+          className="donation-success-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="donation-success-title"
+        >
+          <div className="donation-success-modal">
+            <button
+              type="button"
+              className="donation-success-close"
+              aria-label="Close"
+              onClick={() =>
+                setShowSuccessModal(false)
+              }
+            >
+              ×
+            </button>
+
+            <div className="donation-success-icon">
+              🎉
+            </div>
+
+            <p className="donation-success-eyebrow">
+              PUJO SQUAD
+            </p>
+
+            <h2
+              id="donation-success-title"
+              className="donation-success-title"
+            >
+              You're officially in! ✨
+            </h2>
+
+            <p className="donation-success-text">
+              Thank you,{" "}
+              <strong>
+                {name.trim()}
+              </strong>
+              ! Your support keeps the Pujo
+              Guide free for everyone. ❤️
+            </p>
+
+            <div className="donation-success-badge">
+              <span>
+                {getSupporterTier(
+                  selectedAmount ?? 1
+                ).icon}
+              </span>
+
+              <div>
+                <span className="donation-success-badge-label">
+                  YOUR PUJO VIBE
+                </span>
+
+                <strong>
+                  {
+                    getSupporterTier(
+                      selectedAmount ?? 1
+                    ).title
+                  }
+                </strong>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              className="donation-success-button"
+              onClick={() => {
+                setShowSuccessModal(false);
+                window.location.href = "/";
+              }}
+            >
+              Back to Pujo Guide ✨
+            </button>
+          </div>
+        </div>
+      )}
 
     </main>
   );

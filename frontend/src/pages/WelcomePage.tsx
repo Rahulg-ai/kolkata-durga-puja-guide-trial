@@ -23,6 +23,13 @@ type Supporter = {
 };
 
 
+const SUPPORTERS_CACHE_KEY =
+  "durga_puja_supporters_cache";
+
+
+const SUPPORTERS_REFRESH_INTERVAL = 5000;
+
+
 function WelcomePage({
   onStart,
 }: WelcomePageProps) {
@@ -34,68 +41,183 @@ function WelcomePage({
   const [
     supporters,
     setSupporters,
-  ] = useState<Supporter[]>([]);
+  ] = useState<Supporter[]>(() => {
+
+    try {
+
+      const cached =
+        localStorage.getItem(
+          SUPPORTERS_CACHE_KEY
+        );
+
+      if (!cached) {
+        return [];
+      }
+
+      const parsed =
+        JSON.parse(cached);
+
+      if (!Array.isArray(parsed)) {
+        return [];
+      }
+
+      return parsed;
+
+    } catch {
+
+      return [];
+
+    }
+
+  });
 
 
   const [
     loadingSupporters,
     setLoadingSupporters,
-  ] = useState(true);
+  ] = useState(() => {
+
+    try {
+
+      return !Boolean(
+        localStorage.getItem(
+          SUPPORTERS_CACHE_KEY
+        )
+      );
+
+    } catch {
+
+      return true;
+
+    }
+
+  });
 
 
   /* =====================================================
      LOAD SUPPORTERS
      ===================================================== */
 
-  useEffect(() => {
+  async function loadSupporters(
+    showLoading = false
+  ) {
 
-    async function loadSupporters() {
+    if (showLoading) {
+
+      setLoadingSupporters(
+        true
+      );
+
+    }
+
+
+    try {
+
+      const response =
+        await fetch(
+          `${API_BASE_URL}/supporters`,
+          {
+            cache: "no-store",
+          }
+        );
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          "Failed to load supporters"
+        );
+
+      }
+
+
+      const data =
+        await response.json();
+
+
+      const loadedSupporters =
+        Array.isArray(
+          data?.supporters
+        )
+          ? data.supporters
+          : [];
+
+
+      setSupporters(
+        loadedSupporters
+      );
+
 
       try {
 
-        const response =
-          await fetch(
-            `${API_BASE_URL}/supporters`
-          );
+        localStorage.setItem(
+          SUPPORTERS_CACHE_KEY,
+          JSON.stringify(
+            loadedSupporters
+          )
+        );
+
+      } catch {
+        // Ignore storage errors.
+      }
 
 
-        if (!response.ok) {
+    } catch (error) {
 
-          throw new Error(
-            "Failed to load supporters"
+      console.error(
+        "Failed to load supporters:",
+        error
+      );
+
+    } finally {
+
+      setLoadingSupporters(
+        false
+      );
+
+    }
+
+  }
+
+
+  /* =====================================================
+     INITIAL LOAD + LIVE REFRESH
+     ===================================================== */
+
+  useEffect(() => {
+
+    loadSupporters(
+      supporters.length === 0
+    );
+
+
+    const refreshInterval =
+      window.setInterval(() => {
+
+        if (
+          document.visibilityState ===
+          "visible"
+        ) {
+
+          loadSupporters(
+            false
           );
 
         }
 
-
-        const data =
-          await response.json();
-
-
-        const loadedSupporters =
-          Array.isArray(
-            data?.supporters
-          )
-            ? data.supporters
-            : [];
+      },
+      SUPPORTERS_REFRESH_INTERVAL
+      );
 
 
-        setSupporters(
-          loadedSupporters
-        );
+    function handleVisibilityChange() {
 
-      } catch (error) {
+      if (
+        document.visibilityState ===
+        "visible"
+      ) {
 
-        console.error(
-          "Failed to load supporters:",
-          error
-        );
-
-        setSupporters([]);
-
-      } finally {
-
-        setLoadingSupporters(
+        loadSupporters(
           false
         );
 
@@ -104,7 +226,46 @@ function WelcomePage({
     }
 
 
-    loadSupporters();
+    function handlePageShow() {
+
+      loadSupporters(
+        false
+      );
+
+    }
+
+
+    document.addEventListener(
+      "visibilitychange",
+      handleVisibilityChange
+    );
+
+
+    window.addEventListener(
+      "pageshow",
+      handlePageShow
+    );
+
+
+    return () => {
+
+      window.clearInterval(
+        refreshInterval
+      );
+
+
+      document.removeEventListener(
+        "visibilitychange",
+        handleVisibilityChange
+      );
+
+
+      window.removeEventListener(
+        "pageshow",
+        handlePageShow
+      );
+
+    };
 
   }, []);
 
@@ -195,26 +356,41 @@ function WelcomePage({
           <div className="hero-features">
 
             <div className="hero-feature">
-              <span>🚇</span>
+
+              <span>
+                🚇
+              </span>
+
               <p>
                 Smart Metro Routes
               </p>
+
             </div>
 
 
             <div className="hero-feature">
-              <span>🎉</span>
+
+              <span>
+                🎉
+              </span>
+
               <p>
                 Curated Pandals
               </p>
+
             </div>
 
 
             <div className="hero-feature">
-              <span>🗺️</span>
+
+              <span>
+                🗺️
+              </span>
+
               <p>
                 Easy Navigation
               </p>
+
             </div>
 
           </div>
@@ -250,24 +426,28 @@ function WelcomePage({
 
 
             <h2>
+
               People helping keep
 
               <span>
                 the guide alive.
               </span>
+
             </h2>
 
 
             <p>
+
               Support the project and get
               your name on the supporter board.
+
             </p>
 
           </div>
 
 
           {/* ===============================================
-              SUPPORT BUTTON — NOW ABOVE THE BOARD
+              SUPPORT BUTTON
               =============================================== */}
 
           <button
@@ -285,7 +465,8 @@ function WelcomePage({
               SUPPORTER BOARD
               =============================================== */}
 
-          {loadingSupporters ? (
+          {loadingSupporters &&
+          supporters.length === 0 ? (
 
             <div className="supporter-loading">
 
@@ -303,8 +484,10 @@ function WelcomePage({
 
 
               <p>
+
                 Be the first name on the
                 Pujo Supporter Board. ❤️
+
               </p>
 
             </div>
@@ -316,9 +499,13 @@ function WelcomePage({
               {[...supporters]
                 .sort(
                   (a, b) =>
-                    b.amount - a.amount
+                    b.amount -
+                    a.amount
                 )
-                .slice(0, 12)
+                .slice(
+                  0,
+                  12
+                )
                 .map(
                   (
                     supporter
@@ -329,6 +516,7 @@ function WelcomePage({
                       key={`${supporter.display_name}-${supporter.amount}`}
                     >
 
+
                       {/* =================================
                           ICON
                           ================================= */}
@@ -337,7 +525,9 @@ function WelcomePage({
                         className="supporter-rank"
                         aria-hidden="true"
                       >
+
                         {supporter.icon}
+
                       </div>
 
 
@@ -348,14 +538,20 @@ function WelcomePage({
                       <div className="supporter-info">
 
                         <div className="supporter-name">
+
                           {
                             supporter.display_name
                           }
+
                         </div>
 
 
                         <div className="supporter-title">
-                          {supporter.title}
+
+                          {
+                            supporter.title
+                          }
+
                         </div>
 
                       </div>

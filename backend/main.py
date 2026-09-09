@@ -10,6 +10,7 @@ from fastapi import (
     FastAPI,
     Request,
 )
+from fastapi.responses import JSONResponse
 
 from fastapi.middleware.cors import (
     CORSMiddleware,
@@ -419,15 +420,9 @@ def get_stations():
 
     lines = {}
 
+    for line, group in metro.groupby("line"):
 
-    for line, group in metro.groupby(
-        "line"
-    ):
-
-        group = group.sort_values(
-            "sequence"
-        )
-
+        group = group.sort_values("sequence")
 
         lines[line] = (
             group["station_name"]
@@ -436,10 +431,26 @@ def get_stations():
         )
 
 
-    return {
-        "lines":
-            lines
-    }
+    response = JSONResponse(
+        content={
+            "lines": lines
+        }
+    )
+
+    response.headers["Cache-Control"] = (
+        "public, "
+        "s-maxage=86400, "
+        "stale-while-revalidate=604800"
+    )
+
+    response.headers["CDN-Cache-Control"] = (
+        "public, "
+        "max-age=86400, "
+        "stale-while-revalidate=604800"
+    )
+
+
+    return response
 
 
 # =========================================================
@@ -450,9 +461,26 @@ def get_stations():
 @app.get("/api/pandals")
 def get_pandals():
 
-    return pandals.to_dict(
-        orient="records"
+    response = JSONResponse(
+        content=pandals.to_dict(
+            orient="records"
+        )
     )
+
+    response.headers["Cache-Control"] = (
+        "public, "
+        "s-maxage=86400, "
+        "stale-while-revalidate=604800"
+    )
+
+    response.headers["CDN-Cache-Control"] = (
+        "public, "
+        "max-age=86400, "
+        "stale-while-revalidate=604800"
+    )
+
+
+    return response
 
 
 # =========================================================
@@ -839,10 +867,44 @@ def supporters(
     request: Request,
 ):
 
-    return {
-        "supporters":
-            get_leaderboard()
-    }
+    response = JSONResponse(
+        content={
+            "supporters":
+                get_leaderboard()
+        }
+    )
+
+    # -----------------------------------------------------
+    # PERFORMANCE:
+    # Keep supporter data fresh while avoiding a database
+    # request for every single page refresh.
+    #
+    # CDN cache:
+    #   5 seconds
+    #
+    # Stale-while-revalidate:
+    #   10 seconds
+    # -----------------------------------------------------
+
+    response.headers[
+        "Cache-Control"
+    ] = (
+        "public, "
+        "max-age=0, "
+        "s-maxage=5, "
+        "stale-while-revalidate=10"
+    )
+
+    response.headers[
+        "CDN-Cache-Control"
+    ] = (
+        "public, "
+        "max-age=5, "
+        "stale-while-revalidate=10"
+    )
+
+
+    return response
 
 
 # =========================================================

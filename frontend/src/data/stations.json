@@ -1,0 +1,62 @@
+{
+  "lines": {
+    "Blue Line": [
+      "Dakshineswar",
+      "Baranagar",
+      "Noapara",
+      "Dum Dum",
+      "Belgachia",
+      "Shyambazar",
+      "Shobhabazar Sutanuti",
+      "Girish Park",
+      "M.G. Road",
+      "Central",
+      "Chandni Chowk",
+      "Esplanade",
+      "Park Street",
+      "Maidan",
+      "Rabindra Sadan",
+      "Netaji Bhavan",
+      "Jatin Das Park",
+      "Kalighat",
+      "Rabindra Sarobar",
+      "Mahanayak Uttam Kumar",
+      "Netaji",
+      "Masterda Surya Sen",
+      "Gitanjali",
+      "Kavi Nazrul",
+      "Shahid Khudiram",
+      "Kavi Subhash"
+    ],
+    "Green Line": [
+      "Howrah Maidan",
+      "Howrah",
+      "Mahakaran",
+      "Esplanade",
+      "Sealdah",
+      "Phoolbagan",
+      "Salt Lake Stadium",
+      "Bengal Chemical",
+      "City Centre",
+      "Central Park",
+      "Karunamoyee",
+      "Salt Lake Sector V"
+    ],
+    "Orange Line": [
+      "Kavi Subhash",
+      "Satyajit Ray",
+      "Jyotirindra Nandi",
+      "Kavi Sukanta",
+      "Hemanta Mukhopadhyay"
+    ],
+    "Purple Line": [
+      "Joka",
+      "Thakurpukur",
+      "Sakherbazar",
+      "Behala Chowrasta",
+      "Behala Bazar",
+      "Taratala",
+      "Majerhat"
+    ]
+  }
+}

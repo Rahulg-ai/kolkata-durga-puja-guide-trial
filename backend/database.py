@@ -11,9 +11,11 @@ import psycopg
 # PROJECT PATHS
 # =========================================================
 
-BASE_DIR = Path(
-    __file__
-).resolve().parents[1]
+BASE_DIR = (
+    Path(__file__)
+    .resolve()
+    .parents[1]
+)
 
 
 load_dotenv(
@@ -66,6 +68,10 @@ def get_connection():
     serverless applications such as Vercel.
     """
 
+    # -----------------------------------------------------
+    # POSTGRESQL / SUPABASE
+    # -----------------------------------------------------
+
     if USE_POSTGRES:
 
         connection = psycopg.connect(
@@ -87,7 +93,8 @@ def get_connection():
 
 
     connection = sqlite3.connect(
-        SQLITE_DB_FILE
+        SQLITE_DB_FILE,
+        timeout=10,
     )
 
 
@@ -97,8 +104,17 @@ def get_connection():
 
 
     # Enable foreign-key enforcement.
+
     connection.execute(
         "PRAGMA foreign_keys = ON"
+    )
+
+
+    # Improve SQLite read/write behavior
+    # for local development.
+
+    connection.execute(
+        "PRAGMA busy_timeout = 10000"
     )
 
 
@@ -116,11 +132,15 @@ def init_database():
 
     try:
 
+        # =================================================
+        # POSTGRESQL / SUPABASE
+        # =================================================
+
         if USE_POSTGRES:
 
-            # =============================================
-            # POSTGRESQL / SUPABASE
-            # =============================================
+            # ---------------------------------------------
+            # SUPPORTERS
+            # ---------------------------------------------
 
             connection.execute(
                 """
@@ -131,9 +151,11 @@ def init_database():
 
                     normalized_name TEXT NOT NULL UNIQUE,
 
-                    total_amount INTEGER NOT NULL DEFAULT 0,
+                    total_amount INTEGER NOT NULL
+                        DEFAULT 0,
 
-                    is_visible INTEGER NOT NULL DEFAULT 1,
+                    is_visible INTEGER NOT NULL
+                        DEFAULT 1,
 
                     created_at TIMESTAMPTZ
                         NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -141,6 +163,10 @@ def init_database():
                 """
             )
 
+
+            # ---------------------------------------------
+            # DONATIONS
+            # ---------------------------------------------
 
             connection.execute(
                 """
@@ -170,6 +196,10 @@ def init_database():
             )
 
 
+            # ---------------------------------------------
+            # WEBHOOK EVENTS
+            # ---------------------------------------------
+
             connection.execute(
                 """
                 CREATE TABLE IF NOT EXISTS webhook_events (
@@ -185,7 +215,7 @@ def init_database():
 
 
             # ---------------------------------------------
-            # MIGRATION FOR EXISTING SUPPORTERS TABLE
+            # MIGRATION
             # ---------------------------------------------
 
             connection.execute(
@@ -193,56 +223,113 @@ def init_database():
                 ALTER TABLE supporters
                 ADD COLUMN IF NOT EXISTS
                     is_visible
-                    INTEGER NOT NULL DEFAULT 1
+                    INTEGER NOT NULL
+                    DEFAULT 1
                 """
             )
 
 
             # ---------------------------------------------
-            # INDEXES
+            # SUPPORTER NAME INDEX
             # ---------------------------------------------
 
             connection.execute(
                 """
                 CREATE INDEX IF NOT EXISTS
-                idx_supporters_total_amount
+                    idx_supporters_normalized_name
+                ON supporters(normalized_name)
+                """
+            )
+
+
+            # ---------------------------------------------
+            # SUPPORTER TOTAL INDEX
+            # ---------------------------------------------
+
+            connection.execute(
+                """
+                CREATE INDEX IF NOT EXISTS
+                    idx_supporters_total_amount
                 ON supporters(total_amount DESC)
                 """
             )
 
 
+            # ---------------------------------------------
+            # PUBLIC LEADERBOARD INDEX
+            # ---------------------------------------------
+            #
+            # Optimized specifically for:
+            #
+            # WHERE is_visible = 1
+            # ORDER BY total_amount DESC, id ASC
+            # LIMIT 20
+            #
+            # This is the main query used by the
+            # public supporter board.
+            # ---------------------------------------------
+
             connection.execute(
                 """
                 CREATE INDEX IF NOT EXISTS
-                idx_donations_supporter_id
+                    idx_supporters_public_leaderboard
+                ON supporters(
+                    is_visible,
+                    total_amount DESC,
+                    id ASC
+                )
+                """
+            )
+
+
+            # ---------------------------------------------
+            # DONATION SUPPORTER INDEX
+            # ---------------------------------------------
+
+            connection.execute(
+                """
+                CREATE INDEX IF NOT EXISTS
+                    idx_donations_supporter_id
                 ON donations(supporter_id)
                 """
             )
 
 
+            # ---------------------------------------------
+            # DONATION STATUS INDEX
+            # ---------------------------------------------
+
             connection.execute(
                 """
                 CREATE INDEX IF NOT EXISTS
-                idx_donations_status
+                    idx_donations_status
                 ON donations(status)
                 """
             )
 
 
+            # ---------------------------------------------
+            # WEBHOOK EVENT INDEX
+            # ---------------------------------------------
+
             connection.execute(
                 """
                 CREATE INDEX IF NOT EXISTS
-                idx_webhook_events_event_name
+                    idx_webhook_events_event_name
                 ON webhook_events(event_name)
                 """
             )
 
 
+        # =================================================
+        # SQLITE / LOCAL DEVELOPMENT
+        # =================================================
+
         else:
 
-            # =============================================
-            # SQLITE / LOCAL DEVELOPMENT
-            # =============================================
+            # ---------------------------------------------
+            # SUPPORTERS
+            # ---------------------------------------------
 
             connection.execute(
                 """
@@ -253,9 +340,11 @@ def init_database():
 
                     normalized_name TEXT NOT NULL UNIQUE,
 
-                    total_amount INTEGER NOT NULL DEFAULT 0,
+                    total_amount INTEGER NOT NULL
+                        DEFAULT 0,
 
-                    is_visible INTEGER NOT NULL DEFAULT 1,
+                    is_visible INTEGER NOT NULL
+                        DEFAULT 1,
 
                     created_at TEXT
                         NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -263,6 +352,10 @@ def init_database():
                 """
             )
 
+
+            # ---------------------------------------------
+            # DONATIONS
+            # ---------------------------------------------
 
             connection.execute(
                 """
@@ -290,6 +383,10 @@ def init_database():
                 """
             )
 
+
+            # ---------------------------------------------
+            # WEBHOOK EVENTS
+            # ---------------------------------------------
 
             connection.execute(
                 """
@@ -328,10 +425,97 @@ def init_database():
                     """
                     ALTER TABLE supporters
                     ADD COLUMN is_visible
-                    INTEGER NOT NULL DEFAULT 1
+                    INTEGER NOT NULL
+                    DEFAULT 1
                     """
                 )
 
+
+            # ---------------------------------------------
+            # SUPPORTER NAME INDEX
+            # ---------------------------------------------
+
+            connection.execute(
+                """
+                CREATE INDEX IF NOT EXISTS
+                    idx_supporters_normalized_name
+                ON supporters(normalized_name)
+                """
+            )
+
+
+            # ---------------------------------------------
+            # SUPPORTER TOTAL INDEX
+            # ---------------------------------------------
+
+            connection.execute(
+                """
+                CREATE INDEX IF NOT EXISTS
+                    idx_supporters_total_amount
+                ON supporters(total_amount DESC)
+                """
+            )
+
+
+            # ---------------------------------------------
+            # PUBLIC LEADERBOARD INDEX
+            # ---------------------------------------------
+
+            connection.execute(
+                """
+                CREATE INDEX IF NOT EXISTS
+                    idx_supporters_public_leaderboard
+                ON supporters(
+                    is_visible,
+                    total_amount DESC,
+                    id ASC
+                )
+                """
+            )
+
+
+            # ---------------------------------------------
+            # DONATION SUPPORTER INDEX
+            # ---------------------------------------------
+
+            connection.execute(
+                """
+                CREATE INDEX IF NOT EXISTS
+                    idx_donations_supporter_id
+                ON donations(supporter_id)
+                """
+            )
+
+
+            # ---------------------------------------------
+            # DONATION STATUS INDEX
+            # ---------------------------------------------
+
+            connection.execute(
+                """
+                CREATE INDEX IF NOT EXISTS
+                    idx_donations_status
+                ON donations(status)
+                """
+            )
+
+
+            # ---------------------------------------------
+            # WEBHOOK EVENT INDEX
+            # ---------------------------------------------
+
+            connection.execute(
+                """
+                CREATE INDEX IF NOT EXISTS
+                    idx_webhook_events_event_name
+                ON webhook_events(event_name)
+                """
+            )
+
+
+        # =================================================
+        # COMMIT
+        # =================================================
 
         connection.commit()
 

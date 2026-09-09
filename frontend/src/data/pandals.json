@@ -1,0 +1,702 @@
+[
+  {
+    "pandal_name": "Baghbazar Sarbojanin",
+    "nearest_metro_station": "Shyambazar",
+    "area": "Baghbazar",
+    "last_mile_transport": "Walk",
+    "distance_m": 700,
+    "approx_time_min": 9,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Baghbazar+Sarbojanin+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Sikdar Bagan",
+    "nearest_metro_station": "Shyambazar",
+    "area": "Hati Bagan",
+    "last_mile_transport": "Walk",
+    "distance_m": 500,
+    "approx_time_min": 6,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Sikdar+Bagan+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Hatibagan Nabinpally",
+    "nearest_metro_station": "Shyambazar",
+    "area": "Hati Bagan",
+    "last_mile_transport": "Walk",
+    "distance_m": 600,
+    "approx_time_min": 8,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Hatibagan+Nabinpally+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Nalin Sarkar Street",
+    "nearest_metro_station": "Shyambazar",
+    "area": "Hati Bagan",
+    "last_mile_transport": "Walk",
+    "distance_m": 800,
+    "approx_time_min": 10,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Nalin+Sarkar+Street+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Hatibagan Sarbojonin",
+    "nearest_metro_station": "Shyambazar",
+    "area": "Hati Bagan",
+    "last_mile_transport": "Walk",
+    "distance_m": 650,
+    "approx_time_min": 8,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Hatibagan+Sarbojonin+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Kashi Bose Lane",
+    "nearest_metro_station": "Shyambazar",
+    "area": "Hati Bagan",
+    "last_mile_transport": "Walk",
+    "distance_m": 900,
+    "approx_time_min": 11,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Kashi+Bose+Lane+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Lalabagan Nabankur",
+    "nearest_metro_station": "Shyambazar",
+    "area": "Raja Nabakrishna St",
+    "last_mile_transport": "Walk",
+    "distance_m": 1000,
+    "approx_time_min": 12,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Lalabagan+Nabankur+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Tala Park Prattay",
+    "nearest_metro_station": "Belgachia",
+    "area": "Tala",
+    "last_mile_transport": "Auto/Rickshaw",
+    "distance_m": 1200,
+    "approx_time_min": 10,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Tala+Park+Prattay+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Dakshinpara",
+    "nearest_metro_station": "Belgachia",
+    "area": "Dum Dum",
+    "last_mile_transport": "Auto",
+    "distance_m": 2500,
+    "approx_time_min": 15,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Dakshinpara+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Dumdum Park Bharat Chakra",
+    "nearest_metro_station": "Belgachia",
+    "area": "Dum Dum Park",
+    "last_mile_transport": "Auto",
+    "distance_m": 3000,
+    "approx_time_min": 20,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Dumdum+Park+Bharat+Chakra+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Dumdum Park Sarbajanin",
+    "nearest_metro_station": "Belgachia",
+    "area": "Dum Dum Park",
+    "last_mile_transport": "Auto",
+    "distance_m": 3000,
+    "approx_time_min": 20,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Dumdum+Park+Sarbajanin+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Dumdum Park Tarun Dal",
+    "nearest_metro_station": "Belgachia",
+    "area": "Dum Dum Park",
+    "last_mile_transport": "Auto",
+    "distance_m": 3100,
+    "approx_time_min": 20,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Dumdum+Park+Tarun+Dal+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Sree Bhumi Sporting Club",
+    "nearest_metro_station": "Belgachia",
+    "area": "Lake Town",
+    "last_mile_transport": "Auto/Bus",
+    "distance_m": 3500,
+    "approx_time_min": 25,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Sree+Bhumi+Sporting+Club+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Golaghata Sammilani",
+    "nearest_metro_station": "Belgachia",
+    "area": "Ultadanga",
+    "last_mile_transport": "Auto",
+    "distance_m": 2000,
+    "approx_time_min": 15,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Golaghata+Sammilani+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Dakshindari Youth",
+    "nearest_metro_station": "Belgachia",
+    "area": "Ultadanga",
+    "last_mile_transport": "Auto",
+    "distance_m": 2200,
+    "approx_time_min": 15,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Dakshindari+Youth+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Telengabagan",
+    "nearest_metro_station": "Belgachia",
+    "area": "Ultadanga",
+    "last_mile_transport": "Auto",
+    "distance_m": 2500,
+    "approx_time_min": 18,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Telengabagan+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Sovabazar Boro Rajbari",
+    "nearest_metro_station": "Shobhabazar Sutanuti",
+    "area": "Sovabazar",
+    "last_mile_transport": "Walk",
+    "distance_m": 400,
+    "approx_time_min": 5,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Sovabazar+Boro+Rajbari+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Sovabazar Choto Rajbari",
+    "nearest_metro_station": "Shobhabazar Sutanuti",
+    "area": "Sovabazar",
+    "last_mile_transport": "Walk",
+    "distance_m": 450,
+    "approx_time_min": 6,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Sovabazar+Choto+Rajbari+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Jagat Mukherjee Park",
+    "nearest_metro_station": "Shobhabazar Sutanuti",
+    "area": "Sovabazar",
+    "last_mile_transport": "Walk",
+    "distance_m": 600,
+    "approx_time_min": 8,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Jagat+Mukherjee+Park+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Kumartuli Sarbojanin",
+    "nearest_metro_station": "Shobhabazar Sutanuti",
+    "area": "Kumartuli",
+    "last_mile_transport": "Walk",
+    "distance_m": 800,
+    "approx_time_min": 10,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Kumartuli+Sarbojanin+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Kumartuli Park",
+    "nearest_metro_station": "Shobhabazar Sutanuti",
+    "area": "Kumartuli",
+    "last_mile_transport": "Walk",
+    "distance_m": 750,
+    "approx_time_min": 9,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Kumartuli+Park+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Beniatola Sarbojonin",
+    "nearest_metro_station": "Shobhabazar Sutanuti",
+    "area": "Beniatola",
+    "last_mile_transport": "Walk",
+    "distance_m": 600,
+    "approx_time_min": 7,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Beniatola+Sarbojonin+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Ahiritola Sarbojonin",
+    "nearest_metro_station": "Shobhabazar Sutanuti",
+    "area": "Ahiritola",
+    "last_mile_transport": "Walk",
+    "distance_m": 900,
+    "approx_time_min": 12,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Ahiritola+Sarbojonin+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Jorasanko Sadharan",
+    "nearest_metro_station": "Girish Park",
+    "area": "Jorasanko",
+    "last_mile_transport": "Walk",
+    "distance_m": 500,
+    "approx_time_min": 6,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Jorasanko+Sadharan+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Chorebagan Sarbojonin",
+    "nearest_metro_station": "Girish Park",
+    "area": "Chorebagan",
+    "last_mile_transport": "Walk",
+    "distance_m": 600,
+    "approx_time_min": 7,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Chorebagan+Sarbojonin+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Simla Byayam Samity",
+    "nearest_metro_station": "Girish Park",
+    "area": "Simla St",
+    "last_mile_transport": "Walk",
+    "distance_m": 350,
+    "approx_time_min": 5,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Simla+Byayam+Samity+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Chaltabagan Lohapatty",
+    "nearest_metro_station": "Girish Park",
+    "area": "Amherst St",
+    "last_mile_transport": "Walk",
+    "distance_m": 800,
+    "approx_time_min": 10,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Chaltabagan+Lohapatty+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Mohammad Ali Park",
+    "nearest_metro_station": "MG Road",
+    "area": "Chittaranjan Ave",
+    "last_mile_transport": "Walk",
+    "distance_m": 200,
+    "approx_time_min": 3,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Mohammad+Ali+Park+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "College Square",
+    "nearest_metro_station": "MG Road",
+    "area": "College St",
+    "last_mile_transport": "Walk",
+    "distance_m": 600,
+    "approx_time_min": 7,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=College+Square+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Santosh Mitra Square",
+    "nearest_metro_station": "Central",
+    "area": "Bowbazar",
+    "last_mile_transport": "Walk",
+    "distance_m": 400,
+    "approx_time_min": 5,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Santosh+Mitra+Square+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Sealdah Athletic Club",
+    "nearest_metro_station": "Central",
+    "area": "Sealdah",
+    "last_mile_transport": "Walk",
+    "distance_m": 1000,
+    "approx_time_min": 12,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Sealdah+Athletic+Club+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Subodh Mallick Square",
+    "nearest_metro_station": "Central",
+    "area": "Wellington",
+    "last_mile_transport": "Walk",
+    "distance_m": 600,
+    "approx_time_min": 8,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Subodh+Mallick+Square+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Kapalitola Sarbajanin",
+    "nearest_metro_station": "Central",
+    "area": "Bowbazar",
+    "last_mile_transport": "Walk",
+    "distance_m": 500,
+    "approx_time_min": 6,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Kapalitola+Sarbajanin+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "68 Pally",
+    "nearest_metro_station": "Netaji Bhawan",
+    "area": "Bhowanipur",
+    "last_mile_transport": "Walk",
+    "distance_m": 400,
+    "approx_time_min": 5,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=68+Pally+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "76 Pally",
+    "nearest_metro_station": "Netaji Bhawan",
+    "area": "Bhowanipur",
+    "last_mile_transport": "Walk",
+    "distance_m": 500,
+    "approx_time_min": 6,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=76+Pally+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Bhowanipur 75 Pally",
+    "nearest_metro_station": "Netaji Bhawan",
+    "area": "Bhowanipur",
+    "last_mile_transport": "Walk",
+    "distance_m": 300,
+    "approx_time_min": 4,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Bhowanipur+75+Pally+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "22 Pally (Northern Park)",
+    "nearest_metro_station": "Netaji Bhawan",
+    "area": "Bhowanipur",
+    "last_mile_transport": "Walk",
+    "distance_m": 600,
+    "approx_time_min": 7,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=22+Pally+(Northern+Park)+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Paddapukur Youth",
+    "nearest_metro_station": "Netaji Bhawan",
+    "area": "Paddapukur",
+    "last_mile_transport": "Walk",
+    "distance_m": 800,
+    "approx_time_min": 10,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Paddapukur+Youth+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Harish Park",
+    "nearest_metro_station": "Netaji Bhawan",
+    "area": "Harish Park",
+    "last_mile_transport": "Walk",
+    "distance_m": 700,
+    "approx_time_min": 9,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Harish+Park+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Agradut Udaya Sangha",
+    "nearest_metro_station": "Netaji Bhawan",
+    "area": "Bhowanipur",
+    "last_mile_transport": "Walk",
+    "distance_m": 600,
+    "approx_time_min": 8,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Agradut+Udaya+Sangha+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Swadhin Sangha",
+    "nearest_metro_station": "Netaji Bhawan",
+    "area": "Bhowanipur",
+    "last_mile_transport": "Walk",
+    "distance_m": 550,
+    "approx_time_min": 7,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Swadhin+Sangha+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Jatin Das Park",
+    "nearest_metro_station": "Jatin Das Park",
+    "area": "Hazra",
+    "last_mile_transport": "Walk",
+    "distance_m": 100,
+    "approx_time_min": 2,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Jatin+Das+Park+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "23 Pally",
+    "nearest_metro_station": "Jatin Das Park",
+    "area": "Harish Mukherjee Rd",
+    "last_mile_transport": "Walk",
+    "distance_m": 400,
+    "approx_time_min": 5,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=23+Pally+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Forward Club",
+    "nearest_metro_station": "Jatin Das Park",
+    "area": "Kalighat",
+    "last_mile_transport": "Walk",
+    "distance_m": 500,
+    "approx_time_min": 6,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Forward+Club+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Matri Mandir",
+    "nearest_metro_station": "Jatin Das Park",
+    "area": "Amherst St",
+    "last_mile_transport": "Walk",
+    "distance_m": 600,
+    "approx_time_min": 8,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Matri+Mandir+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Bakul Bagan",
+    "nearest_metro_station": "Jatin Das Park",
+    "area": "Bhowanipur",
+    "last_mile_transport": "Walk",
+    "distance_m": 800,
+    "approx_time_min": 10,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Bakul+Bagan+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Chetla Agrani Club",
+    "nearest_metro_station": "Kalighat",
+    "area": "Chetla",
+    "last_mile_transport": "Auto",
+    "distance_m": 1500,
+    "approx_time_min": 10,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Chetla+Agrani+Club+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Alipore Sarbojonin",
+    "nearest_metro_station": "Kalighat",
+    "area": "Alipore",
+    "last_mile_transport": "Auto",
+    "distance_m": 2000,
+    "approx_time_min": 15,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Alipore+Sarbojonin+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Kolahol Gosthi",
+    "nearest_metro_station": "Kalighat",
+    "area": "Rashbehari",
+    "last_mile_transport": "Walk",
+    "distance_m": 800,
+    "approx_time_min": 10,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Kolahol+Gosthi+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "66 Pally",
+    "nearest_metro_station": "Kalighat",
+    "area": "Rashbehari",
+    "last_mile_transport": "Walk",
+    "distance_m": 500,
+    "approx_time_min": 6,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=66+Pally+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Badamtala Ashar Sangha",
+    "nearest_metro_station": "Kalighat",
+    "area": "Rashbehari",
+    "last_mile_transport": "Walk",
+    "distance_m": 400,
+    "approx_time_min": 5,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Badamtala+Ashar+Sangha+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Deshapriya Park",
+    "nearest_metro_station": "Kalighat",
+    "area": "Rashbehari",
+    "last_mile_transport": "Walk",
+    "distance_m": 1000,
+    "approx_time_min": 12,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Deshapriya+Park+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Tridhara Sammilani",
+    "nearest_metro_station": "Kalighat",
+    "area": "Manoharpukur",
+    "last_mile_transport": "Walk",
+    "distance_m": 900,
+    "approx_time_min": 11,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Tridhara+Sammilani+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Ballygunge Cultural",
+    "nearest_metro_station": "Kalighat",
+    "area": "Ballygunge",
+    "last_mile_transport": "Auto/Rickshaw",
+    "distance_m": 1500,
+    "approx_time_min": 15,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Ballygunge+Cultural+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Hindusthan Park",
+    "nearest_metro_station": "Kalighat",
+    "area": "Gariahat",
+    "last_mile_transport": "Auto",
+    "distance_m": 1800,
+    "approx_time_min": 15,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Hindusthan+Park+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Hindusthan Club",
+    "nearest_metro_station": "Kalighat",
+    "area": "Gariahat",
+    "last_mile_transport": "Auto",
+    "distance_m": 1900,
+    "approx_time_min": 16,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Hindusthan+Club+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Singhi Park",
+    "nearest_metro_station": "Kalighat",
+    "area": "Gariahat",
+    "last_mile_transport": "Auto",
+    "distance_m": 2000,
+    "approx_time_min": 16,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Singhi+Park+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Ekdalia Evergreen",
+    "nearest_metro_station": "Kalighat",
+    "area": "Gariahat",
+    "last_mile_transport": "Auto",
+    "distance_m": 2100,
+    "approx_time_min": 17,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Ekdalia+Evergreen+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Bosepukur Sitala Mandir",
+    "nearest_metro_station": "Kalighat",
+    "area": "Kasba",
+    "last_mile_transport": "Auto/Bus",
+    "distance_m": 3500,
+    "approx_time_min": 25,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Bosepukur+Sitala+Mandir+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Rajdanga Naba Uday Sangha",
+    "nearest_metro_station": "Kalighat",
+    "area": "Kasba",
+    "last_mile_transport": "Auto/Bus",
+    "distance_m": 3800,
+    "approx_time_min": 28,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Rajdanga+Naba+Uday+Sangha+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Mudiali",
+    "nearest_metro_station": "Rabindra Sarobar",
+    "area": "Southern Ave",
+    "last_mile_transport": "Walk",
+    "distance_m": 400,
+    "approx_time_min": 5,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Mudiali+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Shib Mandir",
+    "nearest_metro_station": "Rabindra Sarobar",
+    "area": "Southern Ave",
+    "last_mile_transport": "Walk",
+    "distance_m": 600,
+    "approx_time_min": 7,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Shib+Mandir+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Trikone Park",
+    "nearest_metro_station": "Rabindra Sarobar",
+    "area": "Southern Ave",
+    "last_mile_transport": "Walk",
+    "distance_m": 700,
+    "approx_time_min": 8,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Trikone+Park+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Haridevpur 41 Pally",
+    "nearest_metro_station": "Mahanayak Uttam Kumar",
+    "area": "Haridevpur",
+    "last_mile_transport": "Auto",
+    "distance_m": 2500,
+    "approx_time_min": 15,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Haridevpur+41+Pally+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Vivekananda Park",
+    "nearest_metro_station": "Mahanayak Uttam Kumar",
+    "area": "Haridevpur",
+    "last_mile_transport": "Auto",
+    "distance_m": 2200,
+    "approx_time_min": 14,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Vivekananda+Park+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Ajeya Sanghati",
+    "nearest_metro_station": "Mahanayak Uttam Kumar",
+    "area": "Haridevpur",
+    "last_mile_transport": "Auto",
+    "distance_m": 2600,
+    "approx_time_min": 16,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Ajeya+Sanghati+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "New Sporting Club",
+    "nearest_metro_station": "Mahanayak Uttam Kumar",
+    "area": "Haridevpur",
+    "last_mile_transport": "Auto",
+    "distance_m": 3000,
+    "approx_time_min": 18,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=New+Sporting+Club+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Barisha Club",
+    "nearest_metro_station": "Mahanayak Uttam Kumar",
+    "area": "Behala",
+    "last_mile_transport": "Auto/Bus",
+    "distance_m": 4000,
+    "approx_time_min": 25,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Barisha+Club+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Naktala Udayan Sangha",
+    "nearest_metro_station": "Gitanjali",
+    "area": "Naktala",
+    "last_mile_transport": "Walk",
+    "distance_m": 300,
+    "approx_time_min": 4,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Naktala+Udayan+Sangha+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  },
+  {
+    "pandal_name": "Baishnabghata Balak Samity",
+    "nearest_metro_station": "Gitanjali",
+    "area": "Garia",
+    "last_mile_transport": "Walk",
+    "distance_m": 800,
+    "approx_time_min": 10,
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Baishnabghata+Balak+Samity+Durga+Puja+Kolkata",
+    "metro_line": "Blue Line (North-South)"
+  }
+]

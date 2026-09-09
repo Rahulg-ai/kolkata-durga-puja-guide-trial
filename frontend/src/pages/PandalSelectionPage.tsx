@@ -1,9 +1,8 @@
-import API_BASE_URL from "../api";
 import {
-  useEffect,
   useMemo,
   useState,
 } from "react";
+import pandalsData from "../data/pandals.json";
 
 import "./PandalSelectionPage.css";
 
@@ -43,64 +42,13 @@ function PandalSelectionPage({
   onBack,
 }: PandalSelectionPageProps) {
 
-  const [pandals, setPandals] =
-    useState<Pandal[]>([]);
+  const pandals = pandalsData as Pandal[];
 
   const [search, setSearch] =
     useState("");
-
-  const [loading, setLoading] =
-    useState(true);
+  const loading = false;
 
 
-  /* =====================================================
-     LOAD PANDALS
-     ===================================================== */
-
-  useEffect(() => {
-
-    async function loadPandals() {
-
-      try {
-
-        const response =
-          await fetch(
-            `${API_BASE_URL}/pandals`
-          );
-
-
-        if (!response.ok) {
-          throw new Error(
-            "Failed to load pandals"
-          );
-        }
-
-
-        const data =
-          await response.json();
-
-
-        setPandals(data);
-
-      } catch (error) {
-
-        console.error(
-          "Failed to load pandals:",
-          error
-        );
-
-      } finally {
-
-        setLoading(false);
-
-      }
-
-    }
-
-
-    loadPandals();
-
-  }, []);
 
 
   /* =====================================================

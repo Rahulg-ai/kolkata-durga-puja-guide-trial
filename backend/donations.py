@@ -872,9 +872,6 @@ def process_razorpay_webhook(
 
 def get_leaderboard():
 
-    ensure_supporter_visibility_column()
-
-
     connection = get_connection()
 
 
@@ -951,9 +948,6 @@ def get_leaderboard():
 # =========================================================
 
 def get_admin_supporters():
-
-    ensure_supporter_visibility_column()
-
 
     connection = get_connection()
 

@@ -1,5 +1,4 @@
-import API_BASE_URL from "../api";
-import { useEffect, useState } from "react";
+import stationsData from "../data/stations.json";
 
 import "./StartPage.css";
 
@@ -16,39 +15,9 @@ function StartPage({
   onContinue,
   onBack,
 }: StartPageProps) {
-  const [lines, setLines] = useState<
-    Record<string, string[]>
-  >({});
-  const [loading, setLoading] = useState(true);
+  const lines = stationsData.lines;
+  const loading = false;
 
-  useEffect(() => {
-    async function loadStations() {
-      try {
-        const response = await fetch(
-          `${API_BASE_URL}/stations`
-        );
-
-        if (!response.ok) {
-          throw new Error(
-            "Failed to load stations"
-          );
-        }
-
-        const data = await response.json();
-
-        setLines(data.lines);
-      } catch (error) {
-        console.error(
-          "Failed to load stations:",
-          error
-        );
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadStations();
-  }, []);
 
   return (
     <main className="app">
