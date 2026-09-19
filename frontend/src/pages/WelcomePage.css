@@ -7,6 +7,67 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+
+  padding-top: 32px;
+}
+
+
+/* ---------------------------------------------------------------------
+   DURGA MA MOTIF
+   --------------------------------------------------------------------- */
+
+.durga-motif-wrap {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.durga-motif-wrap::before {
+  content: "";
+
+  position: absolute;
+  inset: -20% 0% -25%;
+
+  background:
+    radial-gradient(
+      58% 58% at 50% 42%,
+      rgba(246, 213, 139, 0.65),
+      rgba(255, 248, 236, 0.25) 55%,
+      rgba(255, 248, 236, 0) 78%
+    );
+
+  filter: blur(10px);
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+.durga-motif-image {
+  position: relative;
+  z-index: 1;
+
+  width: 400px;
+  max-width: 86vw;
+  height: auto;
+
+  filter: drop-shadow(0 14px 26px rgba(125, 43, 32, 0.28));
+
+  animation: motif-float 5s ease-in-out infinite;
+}
+
+@keyframes motif-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .hero-description {
@@ -928,6 +989,15 @@
    ===================================================================== */
 
 @media (max-width: 600px) {
+
+  .hero-content {
+    padding-top: 18px;
+  }
+
+  .durga-motif-image {
+    width: 260px;
+  }
+
 
   .hero-description {
     font-size:

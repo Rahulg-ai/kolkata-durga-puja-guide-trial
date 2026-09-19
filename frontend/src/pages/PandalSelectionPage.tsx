@@ -34,6 +34,54 @@ type PandalSelectionPageProps = {
 };
 
 
+/* =====================================================
+   POPULAR PANDALS
+   Names are matched against pandals.json (no duplicate
+   data is stored here).
+   ===================================================== */
+
+const POPULAR_PANDAL_NAMES = [
+  "Baghbazar Sarbojanin",
+  "Sree Bhumi Sporting Club",
+  "Sovabazar Boro Rajbari",
+  "Kumartuli Park",
+  "College Square",
+  "Santosh Mitra Square",
+  "Badamtala Ashar Sangha",
+  "Deshapriya Park",
+  "Ekdalia Evergreen",
+  "Tridhara Sammilani",
+];
+
+
+function normalizeName(
+  name: string
+): string {
+  return name
+    .trim()
+    .toLowerCase();
+}
+
+
+function formatDistance(
+  meters: number
+): string {
+
+  if (
+    typeof meters !== "number" ||
+    Number.isNaN(meters)
+  ) {
+    return "—";
+  }
+
+  if (meters >= 1000) {
+    return `${(meters / 1000).toFixed(1)} km`;
+  }
+
+  return `${Math.round(meters)} m`;
+}
+
+
 function PandalSelectionPage({
   selectedPandals,
   onSelectionChange,
@@ -49,6 +97,62 @@ function PandalSelectionPage({
   const loading = false;
 
 
+  const isSearching =
+    search.trim().length > 0;
+
+
+  /* =====================================================
+     POPULAR (matched from existing data)
+     ===================================================== */
+
+  const popularPandals =
+    useMemo(() => {
+
+      const byName =
+        new Map<string, Pandal>();
+
+      pandals.forEach((pandal) => {
+        byName.set(
+          normalizeName(
+            pandal.pandal_name
+          ),
+          pandal
+        );
+      });
+
+      const result: Pandal[] = [];
+
+      POPULAR_PANDAL_NAMES.forEach(
+        (name) => {
+
+          const match =
+            byName.get(
+              normalizeName(name)
+            );
+
+          if (match) {
+            result.push(match);
+          }
+
+        }
+      );
+
+      return result;
+
+    }, [pandals]);
+
+
+  const popularNameSet =
+    useMemo(() => {
+
+      return new Set(
+        popularPandals.map(
+          (pandal) =>
+            pandal.pandal_name
+        )
+      );
+
+    }, [popularPandals]);
 
 
   /* =====================================================
@@ -134,6 +238,169 @@ function PandalSelectionPage({
 
   function clearSelection() {
     onSelectionChange([]);
+  }
+
+
+  /* =====================================================
+     CARD
+     ===================================================== */
+
+  function renderPandalCard(
+    pandal: Pandal,
+    popular: boolean
+  ) {
+
+    const selected =
+      selectedPandals.includes(
+        pandal.pandal_name
+      );
+
+    const classes = [
+      "pandal-card",
+      selected ? "selected" : "",
+      popular ? "popular" : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+
+
+    return (
+
+      <button
+        type="button"
+        key={pandal.pandal_name}
+        className={classes}
+        aria-pressed={selected}
+        onClick={() =>
+          togglePandal(
+            pandal.pandal_name
+          )
+        }
+      >
+
+        {/* TOP ROW */}
+
+        <div className="pandal-card-top">
+
+          <div
+            className="pandal-check"
+            aria-hidden="true"
+          >
+            {selected ? "✓" : ""}
+          </div>
+
+
+          {popular && (
+            <span className="pandal-popular-badge">
+              🔥 POPULAR
+            </span>
+          )}
+
+
+          <span
+            className="pandal-emblem"
+            aria-hidden="true"
+          >
+            🌺
+          </span>
+
+        </div>
+
+
+        {/* DIVIDER */}
+
+        <div
+          className="pandal-card-divider"
+          aria-hidden="true"
+        >
+          ✦
+        </div>
+
+
+        {/* NAME */}
+
+        <h3 className="pandal-name">
+          {pandal.pandal_name}
+        </h3>
+
+
+        {/* AREA */}
+
+        <p className="pandal-area">
+          📍 {pandal.area}
+        </p>
+
+
+        {/* META */}
+
+        <div className="pandal-meta">
+
+          <div className="pandal-meta-row">
+
+            <span
+              className="pandal-meta-icon"
+              aria-hidden="true"
+            >
+              🚇
+            </span>
+
+            <span className="pandal-meta-text">
+
+              <span className="pandal-meta-label">
+                Nearest Metro
+              </span>
+
+              <span className="pandal-meta-value">
+                {pandal.nearest_metro_station}
+              </span>
+
+            </span>
+
+          </div>
+
+
+          <div className="pandal-meta-row">
+
+            <span
+              className="pandal-meta-icon"
+              aria-hidden="true"
+            >
+              🚶
+            </span>
+
+            <span className="pandal-meta-text">
+
+              <span className="pandal-meta-label">
+                Distance
+              </span>
+
+              <span className="pandal-meta-value">
+                {formatDistance(
+                  pandal.distance_m
+                )}
+              </span>
+
+            </span>
+
+          </div>
+
+        </div>
+
+
+        {/* FOOTER */}
+
+        <div className="pandal-card-footer">
+
+          <span>
+            DURGA PUJA • KOLKATA
+          </span>
+
+        </div>
+
+      </button>
+
+    );
+
   }
 
 
@@ -272,99 +539,127 @@ function PandalSelectionPage({
 
           </div>
 
+        ) : isSearching ? (
+
+          /* =============================================
+             SEARCH RESULTS (single clean grid)
+             ============================================= */
+
+          <div className="pandal-scroll">
+
+            <p className="pandal-results-count">
+              {filteredPandals.length}
+              {" "}
+              {filteredPandals.length === 1
+                ? "pandal"
+                : "pandals"}
+              {" "}found
+            </p>
+
+
+            <div className="pandal-grid">
+
+              {filteredPandals.map(
+                (pandal) =>
+                  renderPandalCard(
+                    pandal,
+                    popularNameSet.has(
+                      pandal.pandal_name
+                    )
+                  )
+              )}
+
+            </div>
+
+          </div>
+
         ) : (
 
           /* =============================================
-             PANDAL GRID
+             POPULAR + ALL PANDALS
              ============================================= */
 
-          <div className="pandal-grid">
+          <div className="pandal-scroll">
 
-            {filteredPandals.map(
-              (pandal) => {
+            {popularPandals.length > 0 && (
 
-                const selected =
-                  selectedPandals.includes(
-                    pandal.pandal_name
-                  );
+              <section className="pandal-section pandal-section-popular">
+
+                <header className="pandal-section-header">
+
+                  <h2 className="pandal-section-title">
+                    🔥 Popular Pandals
+                  </h2>
+
+                  <p className="pandal-section-subtitle">
+                    Crowd-favourite Puja stops
+                    to get you started
+                  </p>
+
+                  <div
+                    className="pandal-section-rule"
+                    aria-hidden="true"
+                  >
+                    <span>✦</span>
+                  </div>
+
+                </header>
 
 
-                return (
+                <div className="pandal-grid">
 
-                  <button
-                    type="button"
-                    key={
-                      pandal.pandal_name
-                    }
-                    className={`pandal-card ${
-                      selected
-                        ? "selected"
-                        : ""
-                    }`}
-                    onClick={() =>
-                      togglePandal(
+                  {popularPandals.map(
+                    (pandal) =>
+                      renderPandalCard(
+                        pandal,
+                        true
+                      )
+                  )}
+
+                </div>
+
+              </section>
+
+            )}
+
+
+            <section className="pandal-section">
+
+              <header className="pandal-section-header">
+
+                <h2 className="pandal-section-title">
+                  All Pandals
+                </h2>
+
+                <p className="pandal-section-subtitle">
+                  {pandals.length} pandals across the city
+                </p>
+
+                <div
+                  className="pandal-section-rule"
+                  aria-hidden="true"
+                >
+                  <span>✦</span>
+                </div>
+
+              </header>
+
+
+              <div className="pandal-grid">
+
+                {pandals.map(
+                  (pandal) =>
+                    renderPandalCard(
+                      pandal,
+                      popularNameSet.has(
                         pandal.pandal_name
                       )
-                    }
-                  >
+                    )
+                )}
 
-                    {/* TOP */}
+              </div>
 
-                    <div className="pandal-card-top">
-
-                      <div className="pandal-check">
-
-                        {selected
-                          ? "✓"
-                          : ""}
-
-                      </div>
-
-
-                      <span className="pandal-number">
-                        🌺
-                      </span>
-
-                    </div>
-
-
-                    {/* DECORATIVE DIVIDER */}
-
-                    <div className="pandal-card-divider">
-                      ✦
-                    </div>
-
-
-                    {/* PANDAL NAME */}
-
-                    <h2>
-                      {pandal.pandal_name}
-                    </h2>
-
-
-                    {/* PLACE */}
-
-                    <p className="pandal-area">
-                      📍 {pandal.area}
-                    </p>
-
-
-                    {/* FOOTER */}
-
-                    <div className="pandal-card-footer">
-
-                      <span>
-                        DURGA PUJA
-                      </span>
-
-                    </div>
-
-                  </button>
-
-                );
-
-              }
-            )}
+            </section>
 
           </div>
 

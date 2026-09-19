@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import { getFestivalMessage } from "../utils/festival";
 import API_BASE_URL from "../api";
 
-import DurgaMotif from "../components/decorative/DurgaMotif";
 import AlpanaDivider from "../components/decorative/AlpanaDivider";
+
+import durgaMaLogo from "../assets/durga-ma-logo.png";
 
 import "./WelcomePage.css";
 
@@ -294,7 +295,13 @@ function WelcomePage({
 
         <div className="hero-content">
 
-          <DurgaMotif />
+          <div className="durga-motif-wrap">
+            <img
+              src={durgaMaLogo}
+              alt="PujoGo - Kolkata's Durga Puja Guide"
+              className="durga-motif-image"
+            />
+          </div>
 
 
           <p className="festival-tag">
